@@ -1,16 +1,16 @@
 package nl.sogyo.api.controller;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.service.annotation.GetExchange;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
+import nl.sogyo.api.models.gameDTO;
 
+@RestController
 public class GwentController {
     
     @GetMapping("/test")
-    public Response test() {
-        return 
+    public gameDTO test(@RequestParam(value = "", defaultValue = "default") String input) {
+        return new gameDTO(String.format("This is a test. input is: %s", input));
     }
 }
