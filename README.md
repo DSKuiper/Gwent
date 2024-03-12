@@ -47,6 +47,7 @@ This repository contains my personal project that concludes my traineeship at So
         - [ ] Spy (place on your opponent's battlefield and draw 2 cards from your deck)
         - [ ] Scorch (if the opponent has a total strength of at least 10 on this cards row, kill that row's strongest card)
     - [ ] Add scorch item
+- [ ] Add discard pile
 
 #### Would
 - [ ] Switch the view for player 1 and 2
