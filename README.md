@@ -1,93 +1,145 @@
-# Gwent
+# Individual project: Gwent
+
+[![coverage report](https://git.sogyo.nl/dkuiper/gwent/badges/main/coverage.svg)](https://git.sogyo.nl/dkuiper/gwent/-/commits/main)
+
+## Project goal
+This repository contains my personal project that concludes my traineeship at Sogyo. The goal of the personal project is to develop a full-stack web application from scratch. I have chosen to implement the game Gwent, which is a card game originally from The Witcher books by Andrzej Sapkowski. In this project, I will implement the rules used in The Witcher 3: Wild Hunt, a game by CD Project Red. How to play Gwent will be explained later in this README or can be found at: https://game8.co/games/Witcher3/archives/277237. 
+
+### Personal learning goals
+- Ask for help and feedback sooner
+- Stay more focussed on one issue or goal
+
+### Technical learning goals
+- Build the connection from front- to back-end from scratch
+- Get a better understanding of this connection and how data is send back and forth
+
+## MoSCoW requirements
+
+#### Must
+- [ ] UI with:
+    - [ ] Clickable cards
+    - [ ] A field (where players put their cards)
+    - [ ] Show points for both players
+- [ ] Cards:
+    - [ ] Unit cards with a value, no special abilities or sepcific playing field
+    - [ ] Bad weather (set value to 1 for every card in the playing field) and clear weather cards (clear the negative effect of bad weather)
+    - [ ] Commander's horn: double the value of all cards in the chosen playing field
+- [ ] Have a point system that calculates the points both players have on their playing field
+
+#### Should
+- [ ] Improve UI with a complete playing field (three rows for both players; close range, ranged and siege)
+- [ ] Add automatic random deck and hand building
+- [ ] Improve cards:
+    - [ ] Add special abilities to the unit cards:
+        - [ ] Morale boost (add +1 to all units on the row excluding itself)
+        - [ ] Tight bond (when placed next to a card of the same type, double strength of both cards)
+        - [ ] Muster (go through your deck and play all cards of the same type immediately)
+    - [ ] Fully implement the weather cards (one for each row and combat range)
+    - [ ] Add the decoy item (swap with a card in your field)
+    - [ ] Add special character cards (unit cards with a high value and ability)
+    - [ ] Add leader cards (a card that is always in your hand and has a special ability)
+
+#### Could
+- [ ] Add rounds to the game and show in the UI
+- [ ] Improve cards:
+    - [ ] Add special abilities to the unit cards:
+        - [ ] Medic (pick a card from your discard pile and play it instantly)
+        - [ ] Spy (place on your opponent's battlefield and draw 2 cards from your deck)
+        - [ ] Scorch (if the opponent has a total strength of at least 10 on this cards row, kill that row's strongest card)
+    - [ ] Add scorch item
+
+#### Would
+- [ ] Switch the view for player 1 and 2
+- [ ] Allow the players to set their own name
+- [ ] Improve cards:
+    - [ ] Add special abilities to the unit cards:
+        - [ ] Berserker (this card turns much stronger if a mardroeme card is played before or after it)
+        - [ ] Mardroeme (triggers a berserker card)
+- [ ] Implement the different factions (decks): Northern Realms, Nilfgaard, Monster, Scoia'tael and Skellige
+- [ ] Add factions specific leader cards
+- [ ] Save accounts in a database
+- [ ] Enable card collecting specific for these accounts
+- [ ] add own artwork
 
 
+## Framework and set-up
 
-## Getting started
+The back-end, domain and persistence layers of this project are programmed in java. The back-end furthermore uses the Spring Boot framework. The front-end uses Node.js, React and a Vite server.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+In order to play the game, make sure you have `java version 17` installed. Then download and install the dependencies as follows:
 
 ```
-cd existing_repo
-git remote add origin https://git.sogyo.nl/dkuiper/gwent.git
-git branch -M main
-git push -uf origin main
+git clone https://git.sogyo.nl/dkuiper/gwent
+cd client
+npm install
 ```
 
-## Integrate with your tools
+### Running the game
 
-- [ ] [Set up project integrations](https://git.sogyo.nl/dkuiper/gwent/-/settings/integrations)
+To run the game, start the backend server by running the `ApiApplication.java` file in `gwent/api/src/main/java/nl/sogyo/api/`.
 
-## Collaborate with your team
+Start the front-end server by going to the `gwent/client` folder and running the following command in a terminal:
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+```
+npm run dev
+```
 
-## Test and Deploy
+In your browser, go to: `localhost:8080`
 
-Use the built-in continuous integration in GitLab.
+## How to play Gwent
+Gwent is a strategic card game in which two players try to defeat the other by placing their cards on their playing field and forming the highest attack strength. The game is played in three rounds. A player can end a round at the start of their turn, preventing them from playing any more cards. When players end the round, the player with the highest score is granted a win. The player who has won two rounds first wins the game.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## The playing field
+Both players have a playing field consisting of three rows. These rows represent different combat ranges (close range, ranged weapons and siege weapons). Cards can only be placed in a specific row. Therefore, each row has it's own score. Special ability cards like weather cards can also only be placed on their respective row. Items like the commander's horn however can be placed on a row of the players choosing.
 
-***
+TODO: add picture of playing field
 
-# Editing this README
+## Cards
+There are two general types of cards: `unit cards` and `special cards`. 
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Unit cards
+Unit cards are your 'troops'. They have a certain strength which counts towards your score. Some have special abilities.
 
-## Suggestions for a good README
+#### Unit card abilities
+`Berserker`: This unit changes into a much stronger version of itself if a Mardroeme is played before or after it.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+`Commander`: Double the strength of all unit cards in the row. Limit to 1 per row. Can only be placed on the specified row of this unit card.
 
-## Name
-Choose a self-explaining name for your project.
+`Medic`: After playing this card, choose one card from the discard pile and play it instantly (no Heroes or Special cards).
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+`Morale Boost`:	Adds +1 to all units in the row (excluding itself). Can only be placed on the specified row of this unit card.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+`Mardroeme`: Triggers transformation of all Berserker Cards on the same row. Can only be placed on the specified row of this unit card.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+`Muster`: Find any cards with the same name in your deck and play them instantly.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+`Scorch`: Destroy enemy’s strongest unit in a specific row, if the combined strength of all his or her units is 10 or more. Can only be placed on the specified row of this unit card.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+`Spy`: Place on your opponent’s battlefield and draw 2 cards from your deck.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+`Tight Bond`: Placing this unit next to a card with the same name will double the strength of both cards.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+#### Hero cards
+Hero cards are unit cards with a high strength. They are immune to special effects and abilities. Some have a second ability like the ones listed above.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Special cards
+Special cards do not have a strength of their own, but do have special abilities. They can be used to enhance your own cards or hinder the opponent. 
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+#### Special card abilities
+`Commander's Horn`: Double the strength of all unit cards in the row. Limit to 1 per row. Can only be placed on a row of the player's choice.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+`Decoy`: This card allows you to swap it with a (unit) card on the battlefield to return it to your hand.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+`Scorch`: Destroy the strongest card(s) for the row with the highest score anywhere on the battlefield (own rows as well).
 
-## License
-For open source projects, say how it is licensed.
+#### Weather cards:
+`Biting Frost`: Set the strength of all `close combat` cards to 1 for both players.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+`Impenetrable Fog`: Set the strength of all `ranged combat` cards to 1 for both players.
+
+`Torrential Rain`: Set the strength of all `siege combat` cards to 1 for both players.
+
+`Clear Weather`: Discard all weather cards currently on the board.
+
+#### Leader cards
+Leader cards do not have a strength value but always have a special ability. They are always added to your hand and can be played at any time.
