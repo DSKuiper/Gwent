@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/IP Gwent.iml" filepath="$PROJECT_DIR$/.idea/IP Gwent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwent/.idea/IP Gwent.iml" filepath="$PROJECT_DIR$/gwent/.idea/IP Gwent.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,4 @@
+rootProject.name = 'gwent'
+include 'api'
+include 'domain'
+include 'persistence'
