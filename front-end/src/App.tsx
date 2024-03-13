@@ -1,14 +1,17 @@
-import { useState } from 'react';
-import './App.css';
-import React from 'react';
-import { Game } from '../Types';
-import ciri from "./assets/ciri.png";
+import { useState } from 'react'
+import './App.css'
+import React from 'react'
+import { Game } from '../Types'
+import ciri from './assets/ciri.png'
 
 function Card({ card_ID }) {
     return (
-    <button><img src={card_ID}/></button>
+    <button>
+        <img src={card_ID}/>
+    </button>
     );
 }
+
 
 function App() {
   const [game, setGame] = useState<Game | undefined>(undefined)
