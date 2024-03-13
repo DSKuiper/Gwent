@@ -17,37 +17,52 @@ This repository contains my personal project that concludes my traineeship at So
 
 #### Must
 - [ ] UI with:
-    - [ ] Clickable cards
-    - [ ] A field (where players put their cards)
+    - [ ] A clickable card that goes to the field when clicked 
+    - [ ] A simple field with one row per player (where players put their cards)
     - [ ] Show points for both players
-- [ ] Cards:
-    - [ ] Unit cards with a value, no special abilities or sepcific playing field
-    - [ ] Bad weather (set value to 1 for every card in the playing field) and clear weather cards (clear the negative effect of bad weather)
-    - [ ] Commander's horn: double the value of all cards in the chosen playing field
+- [ ] Unit cards with a value, no special abilities or sepcific playing field
 - [ ] Have a point system that calculates the points both players have on their playing field
 
 #### Should
-- [ ] Improve UI with a complete playing field (three rows for both players; close range, ranged and siege)
-- [ ] Add automatic random deck and hand building
+- [ ] functionality:
+    - [ ] Add automatic random deck and hand building
+    - [ ] Add rounds to the game
+    - [ ] Allow players to end the round
+    - [ ] Add funcitonality for leader cards
+- [ ] Improve UI:
+    - [ ] Show a complete playing field (three rows for both players; close range, ranged and siege)
+    - [ ] Show rounds and wins/lives
+    - [ ] Show end round button
+    - [ ] Show weather card spot
+    - [ ] Show leader card
 - [ ] Improve cards:
     - [ ] Add special abilities to the unit cards:
         - [ ] Morale boost (add +1 to all units on the row excluding itself)
         - [ ] Tight bond (when placed next to a card of the same type, double strength of both cards)
         - [ ] Muster (go through your deck and play all cards of the same type immediately)
-    - [ ] Fully implement the weather cards (one for each row and combat range)
+    - [ ] Weather cards:
+        - [ ] Bad weather (set value to 1 for every card in the playing field) 
+        - [ ] Clear weather (clear the negative effect of bad weather)
     - [ ] Add the decoy item (swap with a card in your field)
     - [ ] Add special character cards (unit cards with a high value and ability)
     - [ ] Add leader cards (a card that is always in your hand and has a special ability)
 
 #### Could
-- [ ] Add rounds to the game and show in the UI
+- [ ] functionality:
+    - [ ] Add confirm option before a card is played
+    - [ ] Allow players to choose which row they want to play if applicable (commander's horn and weather cards)
+    - [ ] Add discard pile
+- [ ] UI:
+    - [ ] Show confirm button before a card is played
+    - [ ] Show discard spot
 - [ ] Improve cards:
     - [ ] Add special abilities to the unit cards:
         - [ ] Medic (pick a card from your discard pile and play it instantly)
         - [ ] Spy (place on your opponent's battlefield and draw 2 cards from your deck)
         - [ ] Scorch (if the opponent has a total strength of at least 10 on this cards row, kill that row's strongest card)
+    - [ ] Add commander's horn: double the value of all cards in the chosen playing field
     - [ ] Add scorch item
-- [ ] Add discard pile
+    - [ ] Fully implement the weather cards (one for each combat range)
 
 #### Would
 - [ ] Switch the view for player 1 and 2
@@ -61,7 +76,6 @@ This repository contains my personal project that concludes my traineeship at So
 - [ ] Save accounts in a database
 - [ ] Enable card collecting specific for these accounts
 - [ ] add own artwork
-
 
 ## Framework and set-up
 
