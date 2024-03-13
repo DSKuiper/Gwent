@@ -1,0 +1,107 @@
+image: gradle:jdk17
+
+variables:
+    OAUTH_TOKEN: glpat-3_U9tvYAyvQFRjLRe9LN
+
+stages:          
+    - build
+    - test
+    - version
+    - version_push
+    - package
+
+cache:
+    paths:
+        - .gradle/wrapper
+        - .gradle/caches
+        - front-end/node_modules
+        - front-end/package-lock.json
+
+build-node:       
+    stage: build
+    image: node
+    script:
+        - cd front-end
+        - npm install
+    cache:
+        paths:
+            - front-end/node_modules
+            - front-end/package-lock.json
+
+build-gradle:
+    stage: build
+    image: gradle
+    script:
+        - ./gradlew clean assemble
+    cache:
+        paths:
+            - gradle/wrapper/*.jar
+
+unit-test:   
+    stage: test    
+    script: ./gradlew check
+    artifacts:
+        paths:
+            - $CI_PROJECT_DIR/**/build/test-results/test/**/TEST-*.xml
+        reports:
+            junit: 
+                - $CI_PROJECT_DIR/**/build/test-results/test/**/TEST-*.xml
+
+test-coverage:   
+    stage: test    
+    script:
+        - gradle test
+        - gradle jacocoTestReport
+        - awk -F "," '{instructions += $4 + $5; covered += $5 } END { print covered, "/", instructions, " instructions covered"; print 100*covered/instructions, "% covered" }' `find . -name "jacocoTestReport.csv"`
+    when: always
+    coverage: '/([0-9]{1,3}.[0-9]*).%.covered/'
+    artifacts:
+        paths:
+            - $CI_PROJECT_DIR/**/build/reports/jacoco/test/jacocoTestReport.csv
+
+version on merge:
+    stage: version
+    script:
+        - ./gradlew clean minorVersionUpdate
+    rules:
+        - if: $CI_MERGE_REQUEST_APPROVED
+    artifacts:
+        when: on_success
+        expire_in: 30 days
+        paths:
+            - $CI_PROJECT_DIR/version.properties
+
+version on commit:
+    stage: version
+    script: 
+        - ./gradlew clean patchVersionUpdate
+    rules:
+        - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE != "merge_request_event"
+    artifacts:
+        when: on_success
+        expire_in: 30 days
+        paths:
+            - $CI_PROJECT_DIR/version.properties
+
+version push:
+    stage: version_push
+    script:
+        - git remote remove gitlab_origin
+        - git config --global user.email "$dkuiper@sogyo.nl"
+        - git config --global user.name "$ci-bot"
+        - git remote add gitlab_origin https://oauth2:$OAUTH_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git
+        - git pull gitlab_origin $CI_COMMIT_BRANCH
+        - git add $CI_PROJECT_DIR/version.properties
+        - git commit -m "update version"
+        - git push gitlab_origin HEAD:$CI_COMMIT_BRANCH -o ci.skip
+
+package:
+    stage: package
+    script:
+        - ./gradlew build
+    artifacts:
+        untracked: true
+        when: on_success
+        expire_in: 30 days
+        paths:
+            - $CI_PROJECT_DIR/**/build/libs/*.jar
