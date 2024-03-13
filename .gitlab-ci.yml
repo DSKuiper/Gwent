@@ -87,7 +87,7 @@ version on commit:
 version push:
     stage: version_push
     script:
-        - git remote remove gitlab_origin
+        #- git remote remove gitlab_origin
         - git config --global user.email "$dkuiper@sogyo.nl"
         - git config --global user.name "$ci-bot"
         - git remote add gitlab_origin https://oauth2:$OAUTH_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git
