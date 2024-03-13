@@ -6,9 +6,11 @@ import ciri from './assets/ciri.png'
 
 function Card({ card_ID }) {
     return (
-    <button>
-        <img src={card_ID}/>
-    </button>
+    <div>
+        <button class="card-button">
+            <img src={card_ID} class="card-image"/>
+        </button>
+    </div>
     );
 }
 
@@ -24,7 +26,7 @@ function App() {
 
   return <>
     <h1>Vite + React</h1>
-    <div className="card">
+    <div>
       <button onClick={test}>
         response is {game?.input}
       </button>
