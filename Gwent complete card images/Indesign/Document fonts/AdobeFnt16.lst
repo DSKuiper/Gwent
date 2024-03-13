@@ -1,0 +1,26 @@
+%!Adobe-FontList 1.16
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:GreatVibes-Regular
+FamilyName:Great Vibes
+StyleName:Regular
+MenuName:Great Vibes
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Great Vibes
+WritingScript:Roman
+OutlineFileName:\GreatVibes-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+FileLength:52928
+FileModTime:1370354658
+NameArray:0,Mac,4,Great Vibes
+NameArray:0,Win,1,Great Vibes
+%EndFont
+
