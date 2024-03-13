@@ -1,19 +1,27 @@
 plugins {
     id 'java'
+    id 'checkstyle'
 }
 
 group = 'nl.sogyo'
-version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+checkstyle {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
 }
 
-test {
-    useJUnitPlatform()
+task checkstyle(type: Checkstyle) {
+    source 'domain/src'
+    include '**/*.java'
+    exclude '**/gen/**'
+    exclude '**/R.java'
+    exclude '**/BuildConfig.java'
+
+    reports {
+        xml.required = false
+        html.required = true
+    }
 }

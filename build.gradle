@@ -1,0 +1,3 @@
+apply from: 'version.gradle'
+
+version = loadVersion().getVersion()
