@@ -32,6 +32,7 @@ build-gradle:
     stage: build
     image: gradle
     script:
+        - git update-index --chmod=+x gradlew
         - ./gradlew clean assemble
     cache:
         paths:
