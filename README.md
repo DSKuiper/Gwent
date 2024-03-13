@@ -1,6 +1,6 @@
 # Individual project: Gwent
 
-[![coverage report](https://git.sogyo.nl/dkuiper/gwent/badges/main/coverage.svg)](https://git.sogyo.nl/dkuiper/gwent/-/commits/main)
+[![coverage report](https://git.sogyo.nl/dkuiper/gwent/badges/main/coverage.svg?job=test-coverage)](https://git.sogyo.nl/dkuiper/gwent/-/commits/main)
 
 ## Project goal
 This repository contains my personal project that concludes my traineeship at Sogyo. The goal of the personal project is to develop a full-stack web application from scratch. I have chosen to implement the game Gwent, which is a card game originally from The Witcher books by Andrzej Sapkowski. In this project, I will implement the rules used in The Witcher 3: Wild Hunt, a game by CD Project Red. How to play Gwent will be explained later in this README or can be found at: https://game8.co/games/Witcher3/archives/277237. 
