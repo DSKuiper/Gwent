@@ -1,6 +1,7 @@
 package nl.sogyo.api.controller;
 
 import nl.sogyo.api.models.CardDTO;
+import nl.sogyo.api.models.GameDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GwentController {
     
     @GetMapping("/gwent/api/start")
-    public CardDTO start() {
-        return new CardDTO("ciri");
+    public GameDTO start(@RequestParam(value = "", defaultValue = "default") String input) {
+        return new GameDTO();
     }
 
     @GetMapping("gwent/api/test")

@@ -1,4 +1,4 @@
-export type gameState = {
+export type GameState = {
     cards: Card[];
 }
 
