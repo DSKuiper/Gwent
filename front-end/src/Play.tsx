@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import './App.css'
+import './Play.css'
 import React from 'react'
 import { Card } from '../Types'
 import ciri from './assets/ciri.png'
+import { isGameState } from '../Types'
+import { useGwentGame } from './context/GwentGameContext'
 
 function CardHtml({ card_ID }) {
     return (
@@ -15,7 +17,8 @@ function CardHtml({ card_ID }) {
 }
 
 
-function App() {
+export const Play = () => {
+  const { gameState, setGameState } = useGwentGame();
   const [card, setCard] = useState<Card | undefined>(undefined)
 
   const start = async () => {
@@ -34,6 +37,4 @@ function App() {
     </div>
   </>
 
-}
-
-export default App
+};
