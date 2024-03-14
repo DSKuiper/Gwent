@@ -8,8 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GwentController {
     
-    @GetMapping("/start")
+    @GetMapping("/gwent/api/start")
     public CardDTO start() {
         return new CardDTO("ciri");
     }
+
+    @GetMapping("gwent/api/test")
+    public CardDTO test(@RequestParam(value = "", defaultValue = "default") String input) {
+        return new CardDTO("ciri");
+    }
+
 }
