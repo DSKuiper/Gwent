@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import React from 'react'
-import { Game } from '../Types'
+import { Card } from '../Types'
 import ciri from './assets/ciri.png'
 
-function Card({ card_ID }) {
+function CardHtml({ card_ID }) {
     return (
     <div>
-        <button class="card-button">
-            <img src={card_ID} class="card-image"/>
+        <button className="card-button">
+            <img src={card_ID} className="card-image"/>
         </button>
     </div>
     );
@@ -16,21 +16,21 @@ function Card({ card_ID }) {
 
 
 function App() {
-  const [game, setGame] = useState<Game | undefined>(undefined)
+  const [card, setCard] = useState<Card | undefined>(undefined)
 
-  const test = async () => {
-    const response = await fetch("/test", { method: "GET" });
-    const game = await response.json();
-    setGame(game);
+  const start = async () => {
+    const response = await fetch("/start", { method: "GET" });
+    const card = await response.json();
+    setCard(card);
   }
 
   return <>
     <h1>Vite + React</h1>
     <div>
-      <button onClick={test}>
-        response is {game?.input}
+      <button onClick={start}>
+        response is {card?.cardName}
       </button>
-      <Card card_ID={ciri}/>
+      <CardHtml card_ID={$card?.cardName[0]} />
     </div>
   </>
 
