@@ -21,9 +21,11 @@ export const Play = () => {
 
   return <>
     <div>
-      <CardHtml card_ID={gameState?.cards[0].cardName} />
-      <CardHtml card_ID={gameState?.cards[1].cardName} />
-      <CardHtml card_ID={gameState?.cards[2].cardName} />
+        <span>
+            <CardHtml card_ID={gameState?.cards[0].cardName} />
+            <CardHtml card_ID={gameState?.cards[1].cardName} />
+            <CardHtml card_ID={gameState?.cards[2].cardName} />
+        </span>
     </div>
   </>
 

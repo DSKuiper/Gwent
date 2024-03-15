@@ -7,7 +7,7 @@ import { Gwent } from './Gwent'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
         <GwentGameProvider>
-          <Gwent />
+            <Gwent />
         </GwentGameProvider>
   </React.StrictMode>,
 )
