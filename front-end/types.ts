@@ -1,7 +1,11 @@
-export type Game = {
-    test: string;
+export type GameState = {
+    cards: Card[];
 }
 
-export function isGame(game: unknown): game is Game {
-    return (game as Game).test !== undefined;
+export type Card = {
+    cardName: string;
+}
+
+export function isGameState(game: unknown): gameState is GameState {
+    return (gameState as GameState).cards !== undefined;
 }

@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.js'
 import './index.css'
+import { GwentGameProvider } from './context/GwentGameContext'
+import { Gwent } from './Gwent'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+        <GwentGameProvider>
+            <Gwent />
+        </GwentGameProvider>
   </React.StrictMode>,
 )
