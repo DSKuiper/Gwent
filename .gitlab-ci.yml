@@ -78,7 +78,7 @@ version on commit:
     script: 
         - ./gradlew clean patchVersionUpdate
     rules:
-        - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE != "merge_request_event"
+        - if: $CI_COMMIT_BRANCH && $CI_PIPELINE_SOURCE != "merge_request_event" && $CI_COMMIT_MESSAGE !~ /Merge branch/
     artifacts:
         when: on_success
         expire_in: 30 days
