@@ -64,8 +64,9 @@ version on merge:
     stage: version
     script:
         - ./gradlew clean minorVersionUpdate
-    rules:
-        - if: $CI_MERGE_REQUEST_APPROVED && $CI_PIPELINE_SOURCE == "merge_request_event"
+    only:
+        variables:
+            - $CI_COMMIT_MESSAGE=~ /Merge branch/
     artifacts:
         when: on_success
         expire_in: 30 days
