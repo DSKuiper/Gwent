@@ -1,17 +1,16 @@
-import { useState } from 'react'
-import './Play.css'
 import React from 'react'
+import { useState } from 'react'
 import { Card } from '../Types'
-import ciri from './assets/ciri.png'
 import { isGameState } from '../Types'
 import { useGwentGame } from './context/GwentGameContext'
+import './Play.css'
 
 function CardHtml({ card_ID }) {
+    const { gameState, setGameState } = useGwentGame();
+
     return (
     <div>
-        <button className="card-button">
-            <img src={card_ID} className="card-image"/>
-        </button>
+        <button className="card" id={`${card_ID}`} />
     </div>
     );
 }
@@ -19,21 +18,12 @@ function CardHtml({ card_ID }) {
 
 export const Play = () => {
   const { gameState, setGameState } = useGwentGame();
-  const [card, setCard] = useState<Card | undefined>(undefined)
-
-  const start = async () => {
-    const response = await fetch("/start", { method: "GET" });
-    const card = await response.json();
-    setCard(card);
-  }
 
   return <>
-    <h1>Vite + React</h1>
     <div>
-      <button onClick={start}>
-        response is {card?.cardName}
-      </button>
-      <CardHtml card_ID={$card?.cardName[0]} />
+      <CardHtml card_ID={gameState?.cards[0].cardName} />
+      <CardHtml card_ID={gameState?.cards[1].cardName} />
+      <CardHtml card_ID={gameState?.cards[2].cardName} />
     </div>
   </>
 

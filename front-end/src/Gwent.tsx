@@ -3,8 +3,9 @@ import { Play } from "./Play";
 import { Start } from "./Start";
 
 export const Gwent = () => {
-    const { useGwentGame } = useGwentGame();
-    return gwentGame ? <Play /> : <Start />;
+    const { gameState } = useGwentGame();
+    console.log( gameState);
+    return gameState ? <Play /> : <Start />;
 };
 
-export default Start;
+//export default Start;

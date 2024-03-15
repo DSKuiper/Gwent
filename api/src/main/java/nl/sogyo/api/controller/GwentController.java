@@ -14,9 +14,4 @@ public class GwentController {
         return new GameDTO();
     }
 
-    @GetMapping("gwent/api/test")
-    public CardDTO test(@RequestParam(value = "", defaultValue = "default") String input) {
-        return new CardDTO("ciri");
-    }
-
 }

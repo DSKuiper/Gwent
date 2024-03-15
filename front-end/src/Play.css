@@ -33,11 +33,6 @@
   }
 }
 
-.card-button {
-  padding: 0px;
-  height: 140px;
-  width: auto;
-}
 
 .card-image {
     /* sizing */
@@ -49,4 +44,25 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.card {
+    height: 140px;
+    width: 74px;
+    border-radius: 10px;
+    background-size: 74px 140px;
+    background-position: center;
+}
+
+/*cards */
+#Ciri.card {
+  background-image: url('./assets/Ciri.png');
+}
+
+#Yarpen-Zigrin.card {
+  background-image: url('./assets/Yarpen-Zigrin.png');
+}
+
+#Redenian-Foot-Soldier.card {
+  background-image: url('./assets/Redenian-Foot-Soldier.png');
 }
