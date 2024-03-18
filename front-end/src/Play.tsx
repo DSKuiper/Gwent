@@ -15,11 +15,23 @@ function CardHtml({ card_ID }) {
     );
 }
 
+function PlayingField(/*{field}*/) {
+    //const { gameState, setGameState } = useGwentGame();
+
+    return (
+    <div>
+        <button className="field" disabled="disabled" /*id={`${field}`}*/ />
+    </div>
+    )
+}
 
 export const Play = () => {
   const { gameState, setGameState } = useGwentGame();
 
   return <>
+    <div>
+        <PlayingField />
+    </div>
     <div>
         <span>
             <CardHtml card_ID={gameState?.cards[0].cardName} />

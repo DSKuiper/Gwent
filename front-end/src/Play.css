@@ -51,6 +51,16 @@ div, span {
     display: inline-block
 }
 
+.field {
+    height: 200px;
+    width: 1365px;
+    position: relative;
+    bottom: -20vh;
+    pointer-events: none;
+    background-image: url("./assets/Close-Range-1.png");
+    background-size: auto 200px;
+}
+
 .card {
     height: 300px;
     width: 159px;
