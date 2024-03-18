@@ -14,4 +14,8 @@ public class GwentController {
         return new GameDTO();
     }
 
+    @GetMapping("/gwent/api/play")
+    public GameDTO play(@RequestParam(value = "", defaultValue = "default") String input) {
+        return new GameDTO();
+    }
 }

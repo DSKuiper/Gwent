@@ -12,4 +12,8 @@ public abstract class Card {
     public String getCardName() {
         return cardName;
     }
+
+    protected void play() {
+
+    }
 }
