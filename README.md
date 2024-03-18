@@ -18,7 +18,7 @@ This repository contains my personal project that concludes my traineeship at So
 #### Must
 - [ ] UI with:
     - [ ] A clickable card that goes to the field when clicked 
-    - [ ] A simple field with one row per player (where players put their cards)
+    - [x] A simple field with one row per player (where players put their cards)
     - [ ] Show points for both players
 - [ ] Unit cards with a value, no special abilities or specific playing field
 - [ ] Have a point system that calculates the points both players have on their playing field
