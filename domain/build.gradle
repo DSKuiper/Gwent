@@ -41,11 +41,22 @@ jacoco {
 jacocoTestReport {
 	dependsOn test
 	reports {
-		csv.required = true
+		xml.required = false
+		csv.required = false
+		html.required = true
+		html.outputLocation = layout.buildDirectory.dir('reports/jacoco')
 	}
 }
 
 jacocoTestCoverageVerification {
+	afterEvaluate {
+		getClassDirectories().setFrom(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					"**/nl.sogyo.api/**/*"
+			])
+		})
+	}
+
 	violationRules {
 		rule {
 			limit {
