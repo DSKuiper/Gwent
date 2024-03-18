@@ -1,4 +1,4 @@
-package nl.sogyo;
+package nl.sogyo.domain;
 
 public interface IGwentFactory {
     /**

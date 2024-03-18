@@ -1,9 +1,9 @@
-package nl.sogyo;
+package nl.sogyo.domain;
 
 public class GwentFactory implements IGwentFactory{
 
     @Override
-    public IGwent createNewGame() {
+    public Gwent createNewGame() {
         return new Gwent();
     }
 }
