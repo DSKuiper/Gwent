@@ -7,7 +7,7 @@ public class TestGwent {
 
     @Test
     public void testPlayCardSendsCardToPlayingField() {
-        Card testCard = new UnitCard();
+        Card testCard = new UnitCard("ciri");
         Board testBoard = new Board();
         testCard.playField = testBoard;
         testCard.play();
