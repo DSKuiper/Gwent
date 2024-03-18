@@ -15,12 +15,12 @@ function CardHtml({ card_ID }) {
     );
 }
 
-function PlayingField(/*{field}*/) {
+function PlayingField({field}) {
     //const { gameState, setGameState } = useGwentGame();
 
     return (
     <div>
-        <button className="field" disabled="disabled" /*id={`${field}`}*/ />
+        <button className="field" disabled="disabled" id={`${field}`} />
     </div>
     )
 }
@@ -30,7 +30,8 @@ export const Play = () => {
 
   return <>
     <div>
-        <PlayingField />
+        <PlayingField field="close2" />
+        <PlayingField field="close1" />
     </div>
     <div>
         <span>

@@ -57,8 +57,15 @@ div, span {
     position: relative;
     bottom: -20vh;
     pointer-events: none;
-    background-image: url("./assets/Close-Range-1.png");
     background-size: auto 200px;
+}
+
+#close1.field {
+    background-image: url("./assets/Close-Range-1.png");
+}
+
+#close2.field {
+    background-image: url("./assets/Close-Range-2.png");
 }
 
 .card {
