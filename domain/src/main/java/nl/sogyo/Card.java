@@ -3,6 +3,7 @@ package nl.sogyo;
 public abstract class Card {
     protected String cardID;
     protected String cardName;
+    protected Board playField;
 
 
     public String getCardID() {
@@ -14,6 +15,6 @@ public abstract class Card {
     }
 
     protected void play() {
-
+        playField.addCard(this);
     }
 }

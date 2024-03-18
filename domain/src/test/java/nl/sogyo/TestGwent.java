@@ -8,8 +8,9 @@ public class TestGwent {
     @Test
     public void testPlayCardSendsCardToPlayingField() {
         Card testCard = new UnitCard();
-        testCard.play();
         Board testBoard = new Board();
+        testCard.playField = testBoard;
+        testCard.play();
         assertEquals(testCard, testBoard.getCard(/*1, close, */ 1));
     }
 
