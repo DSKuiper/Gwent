@@ -11,5 +11,7 @@ public interface IGwent {
 
     Board getBoard();
 
+    Hand getHand();
+
     int getNumberOfCards();
 }

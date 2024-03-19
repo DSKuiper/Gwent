@@ -3,7 +3,6 @@ package gwent.domain;
 public abstract class Card {
     protected String cardID;
     protected String cardName;
-    protected Board playField;
 
     public Card(String cardName /*, Board range*/) {
         this.cardName = cardName;
@@ -18,7 +17,8 @@ public abstract class Card {
         return cardName;
     }
 
-    protected void play() {
-        playField.addCard(this);
+    protected void play(Board board, Hand hand) {
+        board.addCard(this);
+        hand.removeCard(this);
     }
 }

@@ -29,7 +29,8 @@ export const Play = () => {
     const { gameState, setGameState } = useGwentGame();
 
     const playCard = async (cardID: String) => {
-        const response = await fetch("/gwent/api/play", { method: "POST",
+        const response = await fetch("/gwent/api/play", {
+            method: "POST",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
@@ -53,8 +54,8 @@ export const Play = () => {
             <PlayingField field="close1" />
         </div>
         <div>
-            <CardHtml card_ID={gameState?.cards[0].cardName} onCardClick={() => playCard(playerOneCardOne)} />
-            <CardHtml card_ID={gameState?.cards[1].cardName} onCardClick={() => playCard(playerOneCardTwo)} />
+            <CardHtml card_ID={gameState?.cards[0].cardName} onCardClick={() => playCard("Ciri")} />
+            <CardHtml card_ID={gameState?.cards[1].cardName} onCardClick={() => playCard("Redenian-Foot-Soldier")} />
 
         </div>
     </>

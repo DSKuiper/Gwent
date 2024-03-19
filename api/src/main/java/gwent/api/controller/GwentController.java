@@ -1,12 +1,11 @@
 package gwent.api.controller;
 
 import gwent.api.models.GameDTO;
+import gwent.api.models.PlayerInputDTO;
 import gwent.domain.IGwent;
 import gwent.domain.IGwentFactory;
 import gwent.domain.GwentFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class GwentController {
@@ -24,8 +23,9 @@ public class GwentController {
         return new GameDTO(game);
     }
 
-    @GetMapping("/gwent/api/play")
-    public GameDTO play(@RequestParam(value = "", defaultValue = "default") String input) {
+    @PostMapping("/gwent/api/play")
+    public GameDTO play(@RequestBody PlayerInputDTO input) {
+        game.playCard(input.getCardToPlay());
         return new GameDTO(game);
     }
 }
