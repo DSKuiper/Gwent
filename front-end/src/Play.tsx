@@ -35,7 +35,7 @@ export const Play = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                cardIDToPlay: cardID
+                cardToPlay: cardID
             }),
         });
 
@@ -45,7 +45,7 @@ export const Play = () => {
 
     var playerOneCardOne = gameState?.cards[0].cardID;
     var playerOneCardTwo = gameState?.cards[1].cardID;
-    var playerOneCardThree = gameState?.cards[2].cardID;
+    //var playerOneCardThree = gameState?.cards[2].cardID;
 
     return <>
         <div>
@@ -55,7 +55,7 @@ export const Play = () => {
         <div>
             <CardHtml card_ID={gameState?.cards[0].cardName} onCardClick={() => playCard(playerOneCardOne)} />
             <CardHtml card_ID={gameState?.cards[1].cardName} onCardClick={() => playCard(playerOneCardTwo)} />
-            <CardHtml card_ID={gameState?.cards[2].cardName} onCardClick={() => playCard(playerOneCardThree)} />
+
         </div>
     </>
 };

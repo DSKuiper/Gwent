@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'java-library'
     id 'application'
     id 'org.springframework.boot' version '3.2.3'
     id 'io.spring.dependency-management' version '1.1.4'
@@ -10,13 +11,16 @@ repositories {
     mavenCentral()
 }
 
-application {
-    mainClassName = 'gwent.api.ApiApplication'
-}
+group = 'gwent'
+
+//application {
+//    mainClassName = 'gwent.api.ApiApplication'
+//}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation project (':domain')
 }
 
 checkstyle {
