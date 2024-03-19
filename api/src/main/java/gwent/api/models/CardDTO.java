@@ -2,6 +2,7 @@ package gwent.api.models;
 
 public class CardDTO {
     private String cardName;
+
     private String cardID;
 
     public CardDTO(String cardName, String cardID) {
@@ -15,5 +16,13 @@ public class CardDTO {
 
     public void setCardName(String cardName) {
         this.cardName = cardName;
+    }
+
+    public String getCardID() {
+        return cardID;
+    }
+
+    public void setCardID(String cardID) {
+        this.cardID = cardID;
     }
 }

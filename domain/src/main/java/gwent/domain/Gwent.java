@@ -22,7 +22,7 @@ public class Gwent implements IGwent {
 
     public void playCard(String cardID) {
         for(int i = 0; i < hand.numberOfCards(); i++) {
-            if(hand.getCard(i).getCardName().equals(cardID)) {
+            if(hand.getCard(i).getCardID().equals(cardID)) {
                 hand.getCard(i).play(board, hand);
             }
         }

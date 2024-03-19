@@ -5,27 +5,27 @@ import { isGameState } from '../Types'
 import { useGwentGame } from './context/GwentGameContext'
 import './Play.css'
 
-function CardInHand({ card_ID, onCardClick }) {
+function CardInHand({ cardImg, onCardClick }) {
     const { gameState, setGameState } = useGwentGame();
 
     return (
     <div>
-        <button className="card" id={`${card_ID}`} onClick={onCardClick} />
+        <button className="card" id={`${cardImg}`} onClick={onCardClick} />
     </div>
     );
 }
 
-function CardInField({ card_ID }) {
+function CardInField({ cardImg }) {
     const { gameState, setGameState } = useGwentGame();
 
     return (
     <div>
-        <button className="card" id={`${card_ID}`} />
+        <button className="card" id={`${cardImg}`} />
     </div>
     );
 }
 
-function PlayingField({field}) {
+function PlayingField({ field }) {
     const { gameState, setGameState } = useGwentGame();
 
     return (
@@ -44,11 +44,11 @@ export const Play = () => {
     var cardsOnBoard = [];
 
     for(let i = 0; i < gameState!.cards.length; i++) {
-        cardsInHand.push(<CardInHand card_ID={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardName)} />);
+        cardsInHand.push(<CardInHand cardImg={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardID)} />);
     }
 
     for(let i = 0; i < gameState!.cards.length; i++) {
-        cardsOnBoard.push(<CardInField card_ID={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardName)} />);
+        cardsOnBoard.push(<CardInField cardImg={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardID)} />);
     }
 
     const playCard = async (cardID: String) => {
