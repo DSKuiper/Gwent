@@ -1,12 +1,14 @@
 package gwent.domain;
 
+import static java.util.UUID.randomUUID;
+
 public abstract class Card {
     protected String cardID;
     protected String cardName;
 
     public Card(String cardName /*, Board range*/) {
         this.cardName = cardName;
-        //this.playField = range;
+        this.cardID = randomUUID().toString();
     }
 
     public String getCardID() {
