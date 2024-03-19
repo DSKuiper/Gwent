@@ -4,6 +4,7 @@ export type GameState = {
 
 export type Card = {
     cardName: string;
+    cardID: string;
 }
 
 export function isGameState(game: unknown): gameState is GameState {
