@@ -15,7 +15,7 @@ public class TestGwent {
         Gwent testGwent = new Gwent();
         UnitCard testCard = new UnitCard("testCard");
         testGwent.getHand().addCard(testCard);
-        testGwent.playCard("testCard");
+        testGwent.playCard(testCard.getCardID());
         assertEquals(testCard, testGwent.getBoard().getCard(0));
     }
 
