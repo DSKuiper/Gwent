@@ -5,7 +5,7 @@ import { isGameState } from '../Types'
 import { useGwentGame } from './context/GwentGameContext'
 import './Play.css'
 
-function CardHtml({ card_ID, onCardClick }) {
+function CardInHand({ card_ID, onCardClick }) {
     const { gameState, setGameState } = useGwentGame();
 
     return (
@@ -15,18 +15,41 @@ function CardHtml({ card_ID, onCardClick }) {
     );
 }
 
-function PlayingField({field}) {
-    //const { gameState, setGameState } = useGwentGame();
+function CardInField({ card_ID }) {
+    const { gameState, setGameState } = useGwentGame();
 
     return (
     <div>
-        <button className="field" disabled="disabled" id={`${field}`} />
+        <button className="card" id={`${card_ID}`} />
+    </div>
+    );
+}
+
+function PlayingField({field}) {
+    const { gameState, setGameState } = useGwentGame();
+
+    return (
+    <div>
+        <button className="field" disabled="disabled" id={`${field}`} >
+
+
+        </button>
     </div>
     )
 }
 
 export const Play = () => {
     const { gameState, setGameState } = useGwentGame();
+    var cardsInHand = [];
+    var cardsOnBoard = [];
+
+    for(let i = 0; i < gameState!.cards.length; i++) {
+        cardsInHand.push(<CardInHand card_ID={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardName)} />);
+    }
+
+    for(let i = 0; i < gameState!.cards.length; i++) {
+        cardsOnBoard.push(<CardInField card_ID={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardName)} />);
+    }
 
     const playCard = async (cardID: String) => {
         const response = await fetch("/gwent/api/play", {
@@ -44,19 +67,15 @@ export const Play = () => {
         setGameState(gameState);
     }
 
-    var playerOneCardOne = gameState?.cards[0].cardID;
-    var playerOneCardTwo = gameState?.cards[1].cardID;
-    //var playerOneCardThree = gameState?.cards[2].cardID;
-
     return <>
         <div>
             <PlayingField field="close2" />
+            {cardsOnBoard}
             <PlayingField field="close1" />
+
         </div>
         <div>
-            <CardHtml card_ID={gameState?.cards[0].cardName} onCardClick={() => playCard("Ciri")} />
-            <CardHtml card_ID={gameState?.cards[1].cardName} onCardClick={() => playCard("Redenian-Foot-Soldier")} />
-
+            {cardsInHand}
         </div>
     </>
 };
