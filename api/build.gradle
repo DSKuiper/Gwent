@@ -11,11 +11,15 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    enabled = true
+}
+
 group = 'gwent'
 
-//application {
-//    mainClassName = 'gwent.api.ApiApplication'
-//}
+application {
+    mainClassName = 'gwent.api.ApiApplication'
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
