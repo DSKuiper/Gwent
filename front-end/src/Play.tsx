@@ -29,10 +29,10 @@ export const Play = () => {
     var cardsOnFieldPlayer2 = [];
 
     /*cardsOnBoardPlayer1*/
-    if(gameState!.cardsOnField.length == 0) {
+    if(gameState!.cardsOnFieldPlayer1.length == 0) {
         cardsOnFieldPlayer1.push(<button type="button" hidden/>)
     } else {
-        for(let i = 0; i < gameState!.cardsOnFieldPlayer1.length; i++) {
+        for(let i = 0; i < gameState?.cardsOnFieldPlayer1.length; i++) {
             cardsOnFieldPlayer1.push(
             <CardInField cardImg={gameState?.cardsOnFieldPlayer1[i].cardName}/>
             );
@@ -40,11 +40,11 @@ export const Play = () => {
     }
 
     /*cardsOnBoardPlayer2*/
-    if(gameState!.cardsOnField.length == 0) {
+    if(gameState!.cardsOnFieldPlayer2.length == 0) {
         cardsOnFieldPlayer2.push(<button type="button" hidden/>)
     } else {
         for(let i = 0; i < gameState!.cardsOnFieldPlayer2.length; i++) {
-            cardsOnFieldPlayer1.push(
+            cardsOnFieldPlayer2.push(
             <CardInField cardImg={gameState?.cardsOnFieldPlayer2[i].cardName}/>
             );
         }
@@ -55,10 +55,6 @@ export const Play = () => {
         cardsInHandPlayer1.push(<button type="button" className="card player1 empty-hand" ></button>)
     } else {
         for(let i = 0; i < gameState!.players[0].hand.cards.length; i++) {
-            let props = {
-                        cardID: gameState?.players[1].hand.cards[i].cardID,
-                        player: 1
-                    }
             cardsInHandPlayer1.push(<CardInHand cardImg={gameState?.players[0].hand.cards[i].cardName}
                 player={"player1"}
                 onCardClick={() => playCard(gameState?.players[0].hand.cards[i].cardID, 1)} />);
@@ -66,11 +62,14 @@ export const Play = () => {
     }
 
     /*cardsInHandPlayer2*/
-    for(let i = 0; i < gameState!.players[1].hand.cards.length; i++) {
-        let cardID = gameState?.players[1].hand.cards[i].cardID;
-        cardsInHandPlayer2.push(<CardInHand cardImg={gameState?.players[1].hand.cards[i].cardName}
-            player={"player2"}
-            onCardClick={() => playCard(cardID, 2)} />);
+    if(gameState!.players[0].hand.cards.length == 0) {
+            cardsInHandPlayer2.push(<button type="button" className="card player2 empty-hand" ></button>)
+    } else {
+        for(let i = 0; i < gameState!.players[1].hand.cards.length; i++) {
+            cardsInHandPlayer2.push(<CardInHand cardImg={gameState?.players[1].hand.cards[i].cardName}
+                player={"player2"}
+                onCardClick={() => playCard(gameState?.players[1].hand.cards[i].cardID, 2)} />);
+        }
     }
 
     const playCard = async (cardID: String, player: int) => {
@@ -103,7 +102,12 @@ export const Play = () => {
         </div>
         <div className="divFix">
             <div className="close1Cards">
-                {cardsOnBoardPlayer1}
+                {cardsOnFieldPlayer1}
+            </div>
+        </div>
+        <div className="divFix">
+            <div className="close2Cards">
+                {cardsOnFieldPlayer2}
             </div>
         </div>
     </>

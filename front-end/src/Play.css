@@ -82,7 +82,13 @@ div, span {
 .close1Cards {
     position: relative;
     left: 80%;
-    bottom: -255px;
+    bottom: -245px;
+}
+
+.close2Cards {
+    position: relative;
+    left: 80%;
+    bottom: 160px;
 }
 
 .card {

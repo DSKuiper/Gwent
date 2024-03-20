@@ -8,7 +8,7 @@ public class TestBoard {
         Gwent testGwent = new Gwent();
         UnitCard testcard = new UnitCard("testcard");
         testGwent.getPlayer1().getHand().addCard(testcard);
-        testGwent.playCard("testcard", 1);
+        testGwent.playCard(testcard.getCardID(), 1);
         assertEquals(1, testGwent.getBoard().getCloseRangePlayer1().size());
         assertEquals(0, testGwent.getBoard().getCloseRangePlayer2().size());
     }
@@ -18,7 +18,7 @@ public class TestBoard {
         Gwent testGwent = new Gwent();
         UnitCard testcard = new UnitCard("testcard");
         testGwent.getPlayer2().getHand().addCard(testcard);
-        testGwent.playCard("testcard", 2);
+        testGwent.playCard(testcard.getCardID(), 2);
         assertEquals(0, testGwent.getBoard().getCloseRangePlayer1().size());
         assertEquals(1, testGwent.getBoard().getCloseRangePlayer2().size());
     }

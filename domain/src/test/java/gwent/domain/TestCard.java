@@ -37,6 +37,6 @@ public class TestCard {
         Player testPlayer2 = new Player(2);
         Board testBoard = new Board(testPlayer1, testPlayer2);
         testCard.play(testBoard, testPlayer2.hand, 2);
-        assertEquals(testCard, testBoard.getCard(/*close, */ 0, 1));
+        assertEquals(testCard, testBoard.getCard(0, 2));
     }
 }
