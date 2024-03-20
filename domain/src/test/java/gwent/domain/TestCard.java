@@ -23,7 +23,9 @@ public class TestCard {
     @Test
     public void testPlayCardSendsCardToPlayingField() {
         Card testCard = new UnitCard("ciri");
-        Board testBoard = new Board();
+        Player testPlayer1 = new Player(1);
+        Player testPlayer2 = new Player(2);
+        Board testBoard = new Board(testPlayer1, testPlayer2);
         Hand testHand = new Hand();
         testCard.play(testBoard, testHand);
         assertEquals(testCard, testBoard.getCard(/*1, close, */ 0));

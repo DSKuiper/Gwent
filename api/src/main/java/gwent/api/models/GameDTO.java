@@ -4,14 +4,13 @@ package gwent.api.models;
 import gwent.domain.IGwent;
 
 public class GameDTO {
-    public CardDTO[] cardsInHand;
+    public PlayerDTO[] players;
     public CardDTO[] cardsOnField;
 
     public GameDTO(IGwent gwent) {
-        cardsInHand = new CardDTO[gwent.getHand().numberOfCards()];
-        for(int i = 0; i < gwent.getHand().numberOfCards(); i++) {
-            cardsInHand[i] = new CardDTO(gwent.getHand().getCard(i).getCardName(), gwent.getHand().getCard(i).getCardID());
-        }
+        players = new PlayerDTO[2];
+        players[0] = new PlayerDTO(gwent, 1);
+        players[1] = new PlayerDTO(gwent, 2);
 
         cardsOnField = new CardDTO[gwent.getBoard().numberOfCards("close")];
         for(int i = 0; i < gwent.getBoard().numberOfCards("close"); i++) {

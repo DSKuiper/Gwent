@@ -3,27 +3,24 @@ package gwent.domain;
 import java.util.ArrayList;
 
 public class Gwent implements IGwent {
-
     private Board board;
-
-    private Hand hand;
+    private Player player1;
+    private Player player2;
     private ArrayList<Card> cards = new ArrayList<>();
 
     public Gwent() {
-        this.board = new Board();
+        this.player1 = new Player(1);
+        this.player2 = new Player(2);
+        this.board = new Board(player1, player2);
         for(int i = 0; i < board.numberOfCards("close"); i++ ) {
             cards.add(board.getCard(i));
-        }
-        this.hand = board.getHand();
-        for(int i = 0; i < hand.numberOfCards(); i++ ) {
-            cards.add(hand.getCard(i));
         }
     }
 
     public void playCard(String cardID) {
-        for(int i = 0; i < hand.numberOfCards(); i++) {
-            if(hand.getCard(i).getCardID().equals(cardID)) {
-                hand.getCard(i).play(board, hand);
+        for(int i = 0; i < player1.hand.numberOfCards(); i++) {
+            if(player1.hand.getCard(i).getCardID().equals(cardID)) {
+                player1.hand.getCard(i).play(board, player1.hand);
             }
         }
     }
@@ -38,8 +35,11 @@ public class Gwent implements IGwent {
         return board.numberOfCards("close");
     }
 
-    @Override
-    public Hand getHand() {
-        return hand;
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
     }
 }

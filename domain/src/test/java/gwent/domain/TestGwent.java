@@ -14,7 +14,7 @@ public class TestGwent {
     public void TestPlayCardMovesTestCardToBoard() {
         Gwent testGwent = new Gwent();
         UnitCard testCard = new UnitCard("testCard");
-        testGwent.getHand().addCard(testCard);
+        testGwent.getPlayer1().getHand().addCard(testCard);
         testGwent.playCard(testCard.getCardID());
         assertEquals(testCard, testGwent.getBoard().getCard(0));
     }
@@ -29,7 +29,7 @@ public class TestGwent {
     @Test
     public void TestGetHandReturnsHand() {
         Gwent testGwent = new Gwent();
-        assertEquals(Hand.class, testGwent.getHand().getClass());
+        assertEquals(Hand.class, testGwent.getPlayer2().getHand().getClass());
     }
 
 
