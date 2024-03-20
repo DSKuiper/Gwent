@@ -1,9 +1,11 @@
 export type GameState = {
-    cards: Card[];
+    cardsInHand: Card[];
+    cardsOnField: Card[];
 }
 
 export type Card = {
     cardName: string;
+    cardID: string;
 }
 
 export function isGameState(game: unknown): gameState is GameState {

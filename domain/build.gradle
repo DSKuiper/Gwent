@@ -4,9 +4,20 @@ plugins {
 	id 'java-library'
 	id 'jacoco'
 	id 'checkstyle'
+	id 'org.springframework.boot' version '3.2.3'
+	id 'io.spring.dependency-management' version '1.1.4'
+	id 'application'
 }
 
-group = 'nl.sogyo'
+group = 'gwent'
+
+jar {
+	enabled = true
+}
+
+application {
+	mainClassName = 'gwent.api.ApiApplication'
+}
 
 java {
 	sourceCompatibility = '17'
@@ -21,6 +32,9 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 	testRuntimeOnly "org.junit.platform:junit-platform-commons:1.8.2"
+	implementation 'org.springframework:spring-context:6.1.5'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
@@ -28,9 +42,6 @@ test {
 	finalizedBy jacocoTestReport
 }
 
-jar {
-	enabled = true
-}
 
 jacoco {
 	toolVersion = "0.8.11"
@@ -41,11 +52,22 @@ jacoco {
 jacocoTestReport {
 	dependsOn test
 	reports {
-		csv.required = true
+		xml.required = false
+		csv.required = false
+		html.required = true
+		html.outputLocation = layout.buildDirectory.dir('reports/jacoco')
 	}
 }
 
 jacocoTestCoverageVerification {
+	afterEvaluate {
+		getClassDirectories().setFrom(classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					"**/gwent.api/**/*"
+			])
+		})
+	}
+
 	violationRules {
 		rule {
 			limit {

@@ -1,4 +1,4 @@
-package nl.sogyo;
+package gwent;
 
 public class IGwentRepository {
 }

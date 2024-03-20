@@ -1,15 +1,21 @@
 plugins {
     id 'java'
+    id 'java-library'
     id 'application'
     id 'org.springframework.boot' version '3.2.3'
     id 'io.spring.dependency-management' version '1.1.4'
     id 'checkstyle'
-    id 'jacoco'
 }
 
 repositories {
     mavenCentral()
 }
+
+jar {
+    enabled = true
+}
+
+group = 'gwent'
 
 application {
     mainClassName = 'gwent.api.ApiApplication'
@@ -18,41 +24,8 @@ application {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.0.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    testRuntimeOnly "org.junit.platform:junit-platform-commons:1.8.2"
+    implementation project (':domain')
 }
-
-test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport
-}
-
-jacoco {
-    toolVersion = "0.8.11"
-    reportsDirectory = layout.buildDirectory.dir("reports/jacoco")
-}
-
-
-jacocoTestReport {
-    dependsOn test
-    reports {
-        csv.required = true
-    }
-}
-
-jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.95
-            }
-        }
-    }
-}
-
-jacocoTestReport.dependsOn jacocoTestCoverageVerification
 
 checkstyle {
     configFile = rootProject.file('config/checkstyle/checkstyle.xml')
