@@ -4,52 +4,55 @@ import { Card } from '../Types'
 import { isGameState } from '../Types'
 import { useGwentGame } from './context/GwentGameContext'
 import './Play.css'
+import './Cards.css'
 
-function CardInHand({ cardImg, onCardClick }) {
+function CardInHand({ cardImg, player, onCardClick }) {
     const { gameState, setGameState } = useGwentGame();
-
-    return (
-    <div>
-        <button className="card" id={`${cardImg}`} onClick={onCardClick} />
-    </div>
-    );
+    return (<button id={`${cardImg}`} className={`card ${player}`} onClick={onCardClick} />);
 }
 
 function CardInField({ cardImg }) {
     const { gameState, setGameState } = useGwentGame();
-
-    return (
-    <div>
-        <button className="card-in-field" id={`${cardImg}`} />
-    </div>
-    );
+    return (<button className="card-in-field" id={`${cardImg}`} />);
 }
 
 function PlayingField({ field }) {
     const { gameState, setGameState } = useGwentGame();
-
-    return (
-    <div>
-        <button className="field" id={`${field}`} disabled="disabled" >
-
-
-        </button>
-    </div>
-    )
+    return (<button className="field" id={`${field}`} disabled="disabled" />);
 }
 
 export const Play = () => {
     const { gameState, setGameState } = useGwentGame();
-    var cardsInHand = [];
+    var cardsInHandPlayer1 = [];
+    var cardsInHandPlayer2 = [];
     var cardsOnBoard = [];
 
-    for(let i = 0; i < gameState!.cardsInHand.length; i++) {
-        cardsInHand.push(<CardInHand cardImg={gameState?.cardsInHand[i].cardName} onCardClick={() => playCard(gameState?.cardsInHand[i].cardID)} />);
+    /*cardsInHandPlayer1*/
+    if(gameState!.players[0].hand.cards.length == 0) {
+        cardsInHandPlayer1.push(<button type="button" className="card player1 empty-hand" ></button>)
+    } else {
+        for(let i = 0; i < gameState!.players[0].hand.cards.length; i++) {
+            cardsInHandPlayer1.push(<CardInHand cardImg={gameState?.players[0].hand.cards[i].cardName}
+                player={"player1"}
+                onCardClick={() => playCard(gameState?.players[0].hand.cards[i].cardID)} />);
+        }
     }
 
-    for(let i = 0; i < gameState!.cardsOnField.length; i++) {
-        cardsOnBoard.push(<CardInField cardImg={gameState?.cardsOnField[i].cardName}
-            onCardClick={() => playCard(gameState?.cardsOnField[i].cardID)} />);
+    /*cardsInHandPlayer2*/
+    for(let i = 0; i < gameState!.players[1].hand.cards.length; i++) {
+        cardsInHandPlayer2.push(<CardInHand cardImg={gameState?.players[1].hand.cards[i].cardName}
+            player={"player2"}
+            onCardClick={() => playCard(gameState?.players[1].hand.cards[i].cardID)} />);
+    }
+
+    /*cardsOnBoard*/
+    if(gameState!.cardsOnField.length == 0) {
+        cardsOnBoard.push(<button type="button" hidden/>)
+    } else {
+        for(let i = 0; i < gameState!.cardsOnField.length; i++) {
+            cardsOnBoard.push(<CardInField cardImg={gameState?.cardsOnField[i].cardName}
+                onCardClick={() => playCard(gameState?.cardsOnField[i].cardID)} />);
+        }
     }
 
     const playCard = async (cardID: String) => {
@@ -70,12 +73,19 @@ export const Play = () => {
 
     return <>
         <div className="divFix">
+            {cardsInHandPlayer2}
+        </div>
+        <div className="divFix">
+            {cardsInHandPlayer1}
+        </div>
+        <div className="divFix">
             <PlayingField field="close2" />
             <PlayingField field="close1"/>
         </div>
-            <div className="divFix">
-                <div className="close1Cards">{cardsOnBoard}</div>
+        <div className="divFix">
+            <div className="close1Cards">
+                {cardsOnBoard}
             </div>
-        <div className="divFix">{cardsInHand}</div>
+        </div>
     </>
 };
