@@ -25,7 +25,9 @@ public class GwentController {
 
     @PostMapping("/gwent/api/play")
     public GameDTO play(@RequestBody PlayerInputDTO input) {
-        game.playCard(input.getCardToPlay());
+        String cardID = input.getCardID();
+        int player = input.getPlayer();
+        game.playCard(cardID, player);
         return new GameDTO(game);
     }
 }

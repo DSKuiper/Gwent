@@ -17,10 +17,18 @@ public class Gwent implements IGwent {
         }
     }
 
-    public void playCard(String cardID) {
-        for(int i = 0; i < player1.hand.numberOfCards(); i++) {
-            if(player1.hand.getCard(i).getCardID().equals(cardID)) {
-                player1.hand.getCard(i).play(board, player1.hand);
+    public void playCard(String cardID, int player) {
+        if(player == 1) {
+            for(int i = 0; i < player1.hand.numberOfCards(); i++) {
+                if(player1.hand.getCard(i).getCardID().equals(cardID)) {
+                    player1.hand.getCard(i).play(board, player1.hand);
+                }
+            }
+        } else {
+            for(int i = 0; i < player2.hand.numberOfCards(); i++) {
+                if(player2.hand.getCard(i).getCardID().equals(cardID)) {
+                    player2.hand.getCard(i).play(board, player2.hand);
+                }
             }
         }
     }

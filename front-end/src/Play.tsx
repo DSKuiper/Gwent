@@ -27,35 +27,41 @@ export const Play = () => {
     var cardsInHandPlayer2 = [];
     var cardsOnBoardPlayer1 = [];
 
-    /*cardsInHandPlayer1*/
-    if(gameState!.players[0].hand.cards.length == 0) {
-        cardsInHandPlayer1.push(<button type="button" className="card player1 empty-hand" ></button>)
-    } else {
-        for(let i = 0; i < gameState!.players[0].hand.cards.length; i++) {
-            cardsInHandPlayer1.push(<CardInHand cardImg={gameState?.players[0].hand.cards[i].cardName}
-                player={"player1"}
-                onCardClick={() => playCard(gameState?.players[0].hand.cards[i].cardID)} />);
-        }
-    }
-
-    /*cardsInHandPlayer2*/
-    for(let i = 0; i < gameState!.players[1].hand.cards.length; i++) {
-        cardsInHandPlayer2.push(<CardInHand cardImg={gameState?.players[1].hand.cards[i].cardName}
-            player={"player2"}
-            onCardClick={() => playCard(gameState?.players[1].hand.cards[i].cardID)} />);
-    }
-
     /*cardsOnBoardPlayer1*/
     if(gameState!.cardsOnField.length == 0) {
         cardsOnBoardPlayer1.push(<button type="button" hidden/>)
     } else {
         for(let i = 0; i < gameState!.cardsOnField.length; i++) {
-            cardsOnBoardPlayer1.push(<CardInField cardImg={gameState?.cardsOnField[i].cardName}
-                onCardClick={() => playCard(gameState?.cardsOnField[i].cardID)} />);
+            cardsOnBoardPlayer1.push(
+            <CardInField cardImg={gameState?.cardsOnField[i].cardName}/>
+            );
         }
     }
 
-    const playCard = async (cardID: String) => {
+    /*cardsInHandPlayer1*/
+    if(gameState!.players[0].hand.cards.length == 0) {
+        cardsInHandPlayer1.push(<button type="button" className="card player1 empty-hand" ></button>)
+    } else {
+        for(let i = 0; i < gameState!.players[0].hand.cards.length; i++) {
+            let props = {
+                        cardID: gameState?.players[1].hand.cards[i].cardID,
+                        player: 1
+                    }
+            cardsInHandPlayer1.push(<CardInHand cardImg={gameState?.players[0].hand.cards[i].cardName}
+                player={"player1"}
+                onCardClick={() => playCard(gameState?.players[0].hand.cards[i].cardID, 1)} />);
+        }
+    }
+
+    /*cardsInHandPlayer2*/
+    for(let i = 0; i < gameState!.players[1].hand.cards.length; i++) {
+        let cardID = gameState?.players[1].hand.cards[i].cardID;
+        cardsInHandPlayer2.push(<CardInHand cardImg={gameState?.players[1].hand.cards[i].cardName}
+            player={"player2"}
+            onCardClick={() => playCard(cardID, 2)} />);
+    }
+
+    const playCard = async (cardID: String, player: int) => {
         const response = await fetch("/gwent/api/play", {
             method: "POST",
             headers: {
@@ -63,7 +69,8 @@ export const Play = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                cardToPlay: cardID
+                cardID: cardID,
+                player: player
             }),
         });
 
