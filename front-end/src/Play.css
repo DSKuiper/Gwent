@@ -58,6 +58,16 @@ div, span {
     background-size: auto 200px;
 }
 
+#close1 {
+    background-image: url("./assets/Close-Range-1.png");
+    top: 50%;
+}
+
+#close2 {
+    background-image: url("./assets/Close-Range-2.png");
+    bottom: 50%;
+}
+
 .card-in-field {
     height: 200px;
     width: 106px;
@@ -69,25 +79,11 @@ div, span {
     pointer-events: none;
 }
 
-#close1 {
-    background-image: url("./assets/Close-Range-1.png");
-    top: 50%;
-    left: 20%;
-}
-
-#close2 {
-    background-image: url("./assets/Close-Range-2.png");
-    bottom: 50%;
-    left: 20%;
-}
-
-/*TODO fix card positions for single cards */
 .close1Cards {
     position: relative;
     left: 80%;
     bottom: -255px;
 }
-
 
 .card {
     height: 300px;
@@ -112,5 +108,4 @@ div, span {
     color: transparent;
     background-color: transparent;
     pointer-events: none;
-
 }
