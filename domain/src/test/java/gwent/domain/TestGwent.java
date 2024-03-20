@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestGwent {
 
     @Test
-    public void TestGetNumberOfCardsReturns0AtStartOfGame() {
+    public void TestGetNumberOfCardsInTheFieldReturns0AtStartOfGame() {
         Gwent testGwent = new Gwent();
-        assertEquals(0, testGwent.getNumberOfCards());
+        assertEquals(0, testGwent.getNumberOfCards(1));
     }
 
     @Test

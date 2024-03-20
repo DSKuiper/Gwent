@@ -25,15 +25,27 @@ export const Play = () => {
     const { gameState, setGameState } = useGwentGame();
     var cardsInHandPlayer1 = [];
     var cardsInHandPlayer2 = [];
-    var cardsOnBoardPlayer1 = [];
+    var cardsOnFieldPlayer1 = [];
+    var cardsOnFieldPlayer2 = [];
 
     /*cardsOnBoardPlayer1*/
     if(gameState!.cardsOnField.length == 0) {
-        cardsOnBoardPlayer1.push(<button type="button" hidden/>)
+        cardsOnFieldPlayer1.push(<button type="button" hidden/>)
     } else {
-        for(let i = 0; i < gameState!.cardsOnField.length; i++) {
-            cardsOnBoardPlayer1.push(
-            <CardInField cardImg={gameState?.cardsOnField[i].cardName}/>
+        for(let i = 0; i < gameState!.cardsOnFieldPlayer1.length; i++) {
+            cardsOnFieldPlayer1.push(
+            <CardInField cardImg={gameState?.cardsOnFieldPlayer1[i].cardName}/>
+            );
+        }
+    }
+
+    /*cardsOnBoardPlayer2*/
+    if(gameState!.cardsOnField.length == 0) {
+        cardsOnFieldPlayer2.push(<button type="button" hidden/>)
+    } else {
+        for(let i = 0; i < gameState!.cardsOnFieldPlayer2.length; i++) {
+            cardsOnFieldPlayer1.push(
+            <CardInField cardImg={gameState?.cardsOnFieldPlayer2[i].cardName}/>
             );
         }
     }
