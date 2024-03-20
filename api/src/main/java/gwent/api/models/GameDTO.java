@@ -15,13 +15,13 @@ public class GameDTO {
 
         cardsOnFieldPlayer1 = new CardDTO[gwent.getBoard().numberOfCards("close", 1)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("close", 1); i++) {
-            cardsOnFieldPlayer1[i] = new CardDTO(gwent.getBoard().getCard(i).getCardName(),
-                    gwent.getBoard().getCard(i).getCardID());
+            cardsOnFieldPlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1).getCardName(),
+                    gwent.getBoard().getCard(i, 1).getCardID());
         }
         cardsOnFieldPlayer2 = new CardDTO[gwent.getBoard().numberOfCards("close", 2)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("close", 1); i++) {
-            cardsOnFieldPlayer2[i] = new CardDTO(gwent.getBoard().getCard(i).getCardName(),
-                    gwent.getBoard().getCard(i).getCardID());
+            cardsOnFieldPlayer2[i] = new CardDTO(gwent.getBoard().getCard(i, 1).getCardName(),
+                    gwent.getBoard().getCard(i, 1).getCardID());
         }
     }
 };

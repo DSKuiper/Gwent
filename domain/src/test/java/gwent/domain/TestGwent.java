@@ -16,7 +16,7 @@ public class TestGwent {
         UnitCard testCard = new UnitCard("testCard");
         testGwent.getPlayer1().getHand().addCard(testCard);
         testGwent.playCard(testCard.getCardID(), 1);
-        assertEquals(testCard, testGwent.getBoard().getCard(0));
+        assertEquals(testCard, testGwent.getBoard().getCard(0, 1));
     }
 
     //meaningless tests for coverage:

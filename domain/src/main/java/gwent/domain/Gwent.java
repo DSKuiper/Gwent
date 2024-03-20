@@ -14,10 +14,10 @@ public class Gwent implements IGwent {
         this.player2 = new Player(2);
         this.board = new Board(player1, player2);
         for(int i = 0; i < board.numberOfCards("close", 1); i++ ) {
-            closeRangePlayer1.add(board.getCard(i));
+            closeRangePlayer1.add(board.getCard(i,1));
         }
         for(int i = 0; i < board.numberOfCards("close", 2); i++ ) {
-            closeRangePlayer2.add(board.getCard(i));
+            closeRangePlayer2.add(board.getCard(i, 2));
         }
     }
 

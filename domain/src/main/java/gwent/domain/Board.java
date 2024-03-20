@@ -13,8 +13,12 @@ public class Board {
         this.player1 = player1;
         this.player2 = player2;
     }
-    public Card getCard(/*int player, String range,*/ int index) {
-        return closeRangePlayer1.get(index);
+    public Card getCard( /*String range,*/ int index, int player) {
+        if (player == 1) {
+            return closeRangePlayer1.get(index);
+        } else {
+            return closeRangePlayer2.get(index);
+        }
     }
 
     public int numberOfCards(String range, int player) {
