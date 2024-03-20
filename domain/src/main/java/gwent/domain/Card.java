@@ -19,8 +19,8 @@ public abstract class Card {
         return cardName;
     }
 
-    protected void play(Board board, Hand hand) {
-        board.addCard(this);
+    protected void play(Board board, Hand hand, int player) {
+        board.addCard(this, player);
         hand.removeCard(this);
     }
 }

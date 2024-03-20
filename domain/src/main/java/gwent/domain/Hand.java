@@ -22,8 +22,8 @@ public class Hand {
         return hand.size();
     }
 
-    public void addCard(Card playedCard) {
-        hand.add(playedCard);
+    public void addCard(Card card) {
+        hand.add(card);
     }
 
     public void removeCard(Card card) {

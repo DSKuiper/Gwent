@@ -10,16 +10,4 @@ public class ApiApplication {
 		SpringApplication.run(ApiApplication.class, args);
 	}
 
-
-	/*private static ResourceConfig createResources() {
-		// Create the dependencies we want to inject
-		IMancalaFactory factory = new MancalaFactory();
-		IMancalaRepository repository = new MancalaRepository();
-		// Create the MancalaController and inject the dependencies
-		MancalaController mancalaController = new MancalaController(factory, repository);
-		// Register our MancalaController
-		return new ResourceConfig().register(mancalaController);
-		// Note: Jetty (and most other frameworks) can also handle Dependency
-		// Injection and registering controllers automatically.
-	}*/
 }

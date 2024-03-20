@@ -21,13 +21,13 @@ public class Gwent implements IGwent {
         if(player == 1) {
             for(int i = 0; i < player1.hand.numberOfCards(); i++) {
                 if(player1.hand.getCard(i).getCardID().equals(cardID)) {
-                    player1.hand.getCard(i).play(board, player1.hand);
+                    player1.hand.getCard(i).play(board, player1.hand, player);
                 }
             }
         } else {
             for(int i = 0; i < player2.hand.numberOfCards(); i++) {
                 if(player2.hand.getCard(i).getCardID().equals(cardID)) {
-                    player2.hand.getCard(i).play(board, player2.hand);
+                    player2.hand.getCard(i).play(board, player2.hand, player);
                 }
             }
         }
