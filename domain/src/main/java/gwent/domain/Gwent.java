@@ -6,19 +6,19 @@ public class Gwent implements IGwent {
     private Board board;
     private Player player1;
     private Player player2;
-    private ArrayList<Card> closeRangePlayer1 = new ArrayList<>();
-    private ArrayList<Card> closeRangePlayer2 = new ArrayList<>();
+    //private ArrayList<Card> closeRangePlayer1 = new ArrayList<>();
+    //private ArrayList<Card> closeRangePlayer2 = new ArrayList<>();
 
     public Gwent() {
         this.player1 = new Player(1);
         this.player2 = new Player(2);
         this.board = new Board(player1, player2);
-        for(int i = 0; i < board.numberOfCards("close", 1); i++ ) {
+        /*for(int i = 0; i < board.numberOfCards("close", 1); i++ ) {
             closeRangePlayer1.add(board.getCard(i,1));
         }
         for(int i = 0; i < board.numberOfCards("close", 2); i++ ) {
             closeRangePlayer2.add(board.getCard(i, 2));
-        }
+        }*/
     }
 
     public void playCard(String cardID, int player) {

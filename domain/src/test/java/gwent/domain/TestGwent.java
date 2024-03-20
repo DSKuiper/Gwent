@@ -19,9 +19,6 @@ public class TestGwent {
         assertEquals(testCard, testGwent.getBoard().getCard(0, 1));
     }
 
-    @Test
-    public void TestCardsAdded
-
     //meaningless tests for coverage:
     @Test
     public void TestGetBoardReturnsBoard() {
