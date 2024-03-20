@@ -1,5 +1,6 @@
 export type GameState = {
-    cards: Card[];
+    cardsInHand: Card[];
+    cardsOnField: Card[];
 }
 
 export type Card = {

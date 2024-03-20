@@ -34,15 +34,6 @@
   }
 }
 
-
-.card-image {
-    /* sizing */
-    height: 140px;
-    width: auto;
-    /* rounded border */
-    border-radius: 4px;
-}
-
 .read-the-docs {
   color: #888;
 }
@@ -51,43 +42,73 @@ div, span {
     display: inline-block
 }
 
+.divfix {
+       bottom: 0;
+       right: 0;
+       position: fixed;
+}
+
 .field {
     height: 200px;
     width: 1365px;
-    position: relative;
-    bottom: -20vh;
+    position: fixed;
     pointer-events: none;
     background-size: auto 200px;
 }
 
-#close1.field {
-    background-image: url("./assets/Close-Range-1.png");
+.card-in-field {
+    height: 200px;
+    width: 106px;
+    border-radius: 10px;
+    margin: 1px;
+    background-size: 107px 200px;
+    background-position: center;
+    position: relative;
+
+    pointer-events: none;
 }
 
-#close2.field {
-    background-image: url("./assets/Close-Range-2.png");
+#close1 {
+    background-image: url("./assets/Close-Range-1.png");
+    top: 50%;
+    left: 20%;
 }
+
+#close2 {
+    background-image: url("./assets/Close-Range-2.png");
+    bottom: 50%;
+    left: 20%;
+}
+
+/*TODO fix card positions for single cards */
+.close1Cards {
+    position: relative;
+    left: 230%;
+    bottom: -50px;
+}
+
 
 .card {
     height: 300px;
     width: 159px;
     border-radius: 10px;
     margin: 1px;
-    background-size: auto 300px;
+    background-size: 160px 300px;
     background-position: center;
     position: relative;
-    bottom: -32vh;
+    bottom: -500px;
+    left: 50%;
 }
 
 /*cards */
-#Ciri.card {
+#Ciri {
   background-image: url('./assets/Ciri.png');
 }
 
-#Yarpen-Zigrin.card {
+#Yarpen-Zigrin {
   background-image: url('./assets/Yarpen-Zigrin.png');
 }
 
-#Redenian-Foot-Soldier.card {
+#Redenian-Foot-Soldier {
   background-image: url('./assets/Redenian-Foot-Soldier.png');
 }

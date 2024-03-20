@@ -20,7 +20,7 @@ function CardInField({ cardImg }) {
 
     return (
     <div>
-        <button className="card" id={`${cardImg}`} />
+        <button className="card-in-field" id={`${cardImg}`} />
     </div>
     );
 }
@@ -30,7 +30,7 @@ function PlayingField({ field }) {
 
     return (
     <div>
-        <button className="field" disabled="disabled" id={`${field}`} >
+        <button className="field" id={`${field}`} disabled="disabled" >
 
 
         </button>
@@ -43,12 +43,13 @@ export const Play = () => {
     var cardsInHand = [];
     var cardsOnBoard = [];
 
-    for(let i = 0; i < gameState!.cards.length; i++) {
-        cardsInHand.push(<CardInHand cardImg={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardID)} />);
+    for(let i = 0; i < gameState!.cardsInHand.length; i++) {
+        cardsInHand.push(<CardInHand cardImg={gameState?.cardsInHand[i].cardName} onCardClick={() => playCard(gameState?.cardsInHand[i].cardID)} />);
     }
 
-    for(let i = 0; i < gameState!.cards.length; i++) {
-        cardsOnBoard.push(<CardInField cardImg={gameState?.cards[i].cardName} onCardClick={() => playCard(gameState?.cards[i].cardID)} />);
+    for(let i = 0; i < gameState!.cardsOnField.length; i++) {
+        cardsOnBoard.push(<CardInField cardImg={gameState?.cardsOnField[i].cardName}
+            onCardClick={() => playCard(gameState?.cardsOnField[i].cardID)} />);
     }
 
     const playCard = async (cardID: String) => {
@@ -68,14 +69,13 @@ export const Play = () => {
     }
 
     return <>
-        <div>
+        <div className="divFix">
             <PlayingField field="close2" />
-            {cardsOnBoard}
-            <PlayingField field="close1" />
-
+            <PlayingField field="close1"/>
         </div>
-        <div>
-            {cardsInHand}
-        </div>
+            <div className="divFix">
+                <div className="close1Cards">{cardsOnBoard}</div>
+            </div>
+        <div className="divFix">{cardsInHand}</div>
     </>
 };
