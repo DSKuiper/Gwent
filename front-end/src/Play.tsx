@@ -30,20 +30,20 @@ export const Play = () => {
     var cardsOnFieldPlayer2 = [];
 
     /*cardsOnBoardPlayer1*/
-    if(gameState!.cardsOnFieldPlayer1.length == 0) {
+    if(gameState!.board.cardsOnFieldPlayer1.length == 0) {
         cardsOnFieldPlayer1.push(<button type="button" className="card-in-field empty-card"></button>);
     } else {
-        for(let i = 0; i < gameState?.cardsOnFieldPlayer1.length; i++) {
-            cardsOnFieldPlayer1.push(<CardInField cardImg={gameState?.cardsOnFieldPlayer1[i].cardName}/>);
+        for(let i = 0; i < gameState?.board.cardsOnFieldPlayer1.length; i++) {
+            cardsOnFieldPlayer1.push(<CardInField cardImg={gameState?.board.cardsOnFieldPlayer1[i].cardName}/>);
         }
     }
 
     /*cardsOnBoardPlayer2*/
-    if(gameState!.cardsOnFieldPlayer2.length == 0) {
+    if(gameState!.board.cardsOnFieldPlayer2.length == 0) {
         cardsOnFieldPlayer2.push(<button type="button" className="card-in-field empty-card"></button>);
     } else {
-        for(let i = 0; i < gameState!.cardsOnFieldPlayer2.length; i++) {
-            cardsOnFieldPlayer2.push(<CardInField cardImg={gameState?.cardsOnFieldPlayer2[i].cardName}/>);
+        for(let i = 0; i < gameState!.board.cardsOnFieldPlayer2.length; i++) {
+            cardsOnFieldPlayer2.push(<CardInField cardImg={gameState?.board.cardsOnFieldPlayer2[i].cardName}/>);
         }
     }
 
