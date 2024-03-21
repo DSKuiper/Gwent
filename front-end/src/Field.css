@@ -1,0 +1,48 @@
+
+
+.field {
+    height: 124px;
+    width: 811px;
+    position: relative;
+    pointer-events: none;
+    background-size: auto 124px;
+    z-index: 7;
+}
+
+#close1 {
+    background-image: url("./assets/Close-Range-1.png");
+    top: 673px;
+    left: 178px;
+}
+
+#close2 {
+    background-image: url("./assets/Close-Range-2.png");
+    top: 400px;
+    left: 178px;
+}
+
+.card-in-field {
+    height: 124px;
+    width: 66px;
+    border-radius: 10px;
+    margin: 1px;
+    background-size: 66px 124px;
+    background-position: center;
+    position: relative;
+    pointer-events: none;
+}
+
+.close2Cards {
+    position: relative;
+    left: 175px;
+    top: 528px;
+    z-index: 10;
+}
+
+.close1Cards {
+    position: relative;
+    left: 175px;
+    top: 544px;
+    z-index: 20;
+}
+

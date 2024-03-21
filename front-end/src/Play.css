@@ -1,10 +1,38 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-width: 1660px;
+  max-width: 1660px;
+  min-height: 1325px;
+  max-height: 1325px;
   text-align: center;
   position:fixed;
+  left: 300px;
+  z-index: 0;
+/*  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  */
 }
+
+.divFix {
+    width: 1660px;
+    height: 1325px;
+    position: fixed;
+    top: 0px;
+    left: 300px;
+}
+
+.background {
+    width: 1660px;
+    height: 1325px;
+    background-size: 1660px 1325px;
+    position: fixed;
+    top: 0px;
+    left: 300px;
+    z-index: -1;
+}
+
+
+
 
 /*
 .logo {
@@ -43,75 +71,3 @@ div, span {
     display: inline-block
 }
 */
-
-.divfix {
-       bottom: 0;
-       right: 0;
-       position: fixed;
-}
-
-.field {
-    height: 200px;
-    width: 1365px;
-    position: fixed;
-    pointer-events: none;
-    background-size: auto 200px;
-}
-
-#close1 {
-    background-image: url("./assets/Close-Range-1.png");
-    top: 50%;
-}
-
-#close2 {
-    background-image: url("./assets/Close-Range-2.png");
-    bottom: 50%;
-}
-
-.card-in-field {
-    height: 200px;
-    width: 106px;
-    border-radius: 10px;
-    margin: 1px;
-    background-size: 107px 200px;
-    background-position: center;
-    position: relative;
-    pointer-events: none;
-}
-
-.close1Cards {
-    position: relative;
-    left: 80%;
-    bottom: -245px;
-}
-
-.close2Cards {
-    position: relative;
-    left: 80%;
-    bottom: 160px;
-}
-
-.card {
-    height: 300px;
-    width: 159px;
-    border-radius: 10px;
-    margin: 1px;
-    background-size: 160px 300px;
-    background-position: center;
-    position: relative;
-    left: 80%;
-}
-
-.player1 {
-    bottom: -1100px;
-}
-
-.player2 {
-    top: 0px;
-}
-
-.empty-hand {
-    color: transparent;
-    background-color: transparent;
-    pointer-events: none;
-}
