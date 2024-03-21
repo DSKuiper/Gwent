@@ -26,18 +26,20 @@
     pointer-events: none;
 }
 
-#background {
-    background-image: url('./assets/Background.jpg');
+/* template:
+# {
+    background-image: url('./assets/Northern-Realms/.png');
 }
+*/
 
 #Ciri {
-    background-image: url('./assets/Ciri.png');
+    background-image: url('./assets/Neutrals/Ciri-1.png');
 }
 
 #Yarpen-Zigrin {
-    background-image: url('./assets/Yarpen-Zigrin.png');
+    background-image: url('./assets/Northern-Realms/Yarpen-Zigrin.png');
 }
 
 #Redenian-Foot-Soldier {
-    background-image: url('./assets/Redenian-Foot-Soldier.png');
+    background-image: url('./assets/Northern-Realms/Redenian-Foot-Soldier-1.png');
 }

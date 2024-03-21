@@ -1,4 +1,7 @@
 
+#background {
+    background-image: url('./assets/Field/Background.jpg');
+}
 
 .field {
     height: 124px;
@@ -10,13 +13,13 @@
 }
 
 #close1 {
-    background-image: url("./assets/Close-Range-1.png");
+    background-image: url("./assets/Field/Close-Range-1.png");
     top: 673px;
     left: 178px;
 }
 
 #close2 {
-    background-image: url("./assets/Close-Range-2.png");
+    background-image: url("./assets/Field/Close-Range-2.png");
     top: 400px;
     left: 178px;
 }
