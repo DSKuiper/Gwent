@@ -1,11 +1,43 @@
+
+.card {
+    height: 150px;
+    width: 80px;
+    border-radius: 10px;
+    margin: 1px;
+    background-size: 80px 150px;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+}
+
+.player2 {
+    top: 100px;
+    left: 100px;
+}
+
+.player1 {
+    top: 920px;
+    left: 100px;
+}
+
+.empty-card {
+    color: transparent;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+#background {
+    background-image: url('./assets/Background.jpg');
+}
+
 #Ciri {
-  background-image: url('./assets/Ciri.png');
+    background-image: url('./assets/Ciri.png');
 }
 
 #Yarpen-Zigrin {
-  background-image: url('./assets/Yarpen-Zigrin.png');
+    background-image: url('./assets/Yarpen-Zigrin.png');
 }
 
 #Redenian-Foot-Soldier {
-  background-image: url('./assets/Redenian-Foot-Soldier.png');
+    background-image: url('./assets/Redenian-Foot-Soldier.png');
 }
