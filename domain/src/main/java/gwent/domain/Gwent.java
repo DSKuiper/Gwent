@@ -3,27 +3,36 @@ package gwent.domain;
 import java.util.ArrayList;
 
 public class Gwent implements IGwent {
-
     private Board board;
-
-    private Hand hand;
-    private ArrayList<Card> cards = new ArrayList<>();
+    private Player player1;
+    private Player player2;
+    //private ArrayList<Card> closeRangePlayer1 = new ArrayList<>();
+    //private ArrayList<Card> closeRangePlayer2 = new ArrayList<>();
 
     public Gwent() {
-        this.board = new Board();
-        for(int i = 0; i < board.numberOfCards("close"); i++ ) {
-            cards.add(board.getCard(i));
+        this.player1 = new Player(1);
+        this.player2 = new Player(2);
+        this.board = new Board(player1, player2);
+        /*for(int i = 0; i < board.numberOfCards("close", 1); i++ ) {
+            closeRangePlayer1.add(board.getCard(i,1));
         }
-        this.hand = board.getHand();
-        for(int i = 0; i < hand.numberOfCards(); i++ ) {
-            cards.add(hand.getCard(i));
-        }
+        for(int i = 0; i < board.numberOfCards("close", 2); i++ ) {
+            closeRangePlayer2.add(board.getCard(i, 2));
+        }*/
     }
 
-    public void playCard(String cardID) {
-        for(int i = 0; i < hand.numberOfCards(); i++) {
-            if(hand.getCard(i).getCardID().equals(cardID)) {
-                hand.getCard(i).play(board, hand);
+    public void playCard(String cardID, int player) {
+        if(player == 1) {
+            for(int i = 0; i < player1.hand.numberOfCards(); i++) {
+                if(player1.hand.getCard(i).getCardID().equals(cardID)) {
+                    player1.hand.getCard(i).play(board, player1.hand, player);
+                }
+            }
+        } else {
+            for(int i = 0; i < player2.hand.numberOfCards(); i++) {
+                if(player2.hand.getCard(i).getCardID().equals(cardID)) {
+                    player2.hand.getCard(i).play(board, player2.hand, player);
+                }
             }
         }
     }
@@ -34,12 +43,15 @@ public class Gwent implements IGwent {
     }
 
     @Override
-    public int getNumberOfCards() {
-        return board.numberOfCards("close");
+    public int getNumberOfCards(int player) {
+        return board.numberOfCards("close", player);
     }
 
-    @Override
-    public Hand getHand() {
-        return hand;
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
     }
 }

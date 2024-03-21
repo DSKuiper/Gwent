@@ -7,11 +7,13 @@ public interface IGwent {
      *
      * @param cardID unique ID of the card being played
      */
-    void playCard(String cardID);
+    void playCard(String cardID, int player);
 
     Board getBoard();
 
-    Hand getHand();
+    int getNumberOfCards(int player);
 
-    int getNumberOfCards();
+    Player getPlayer1();
+
+    Player getPlayer2();
 }

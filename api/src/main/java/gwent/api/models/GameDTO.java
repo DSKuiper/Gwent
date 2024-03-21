@@ -4,18 +4,24 @@ package gwent.api.models;
 import gwent.domain.IGwent;
 
 public class GameDTO {
-    public CardDTO[] cardsInHand;
-    public CardDTO[] cardsOnField;
+    public PlayerDTO[] players;
+    public CardDTO[] cardsOnFieldPlayer1;
+    public CardDTO[] cardsOnFieldPlayer2;
 
     public GameDTO(IGwent gwent) {
-        cardsInHand = new CardDTO[gwent.getHand().numberOfCards()];
-        for(int i = 0; i < gwent.getHand().numberOfCards(); i++) {
-            cardsInHand[i] = new CardDTO(gwent.getHand().getCard(i).getCardName(), gwent.getHand().getCard(i).getCardID());
-        }
+        players = new PlayerDTO[2];
+        players[0] = new PlayerDTO(gwent, 1);
+        players[1] = new PlayerDTO(gwent, 2);
 
-        cardsOnField = new CardDTO[gwent.getBoard().numberOfCards("close")];
-        for(int i = 0; i < gwent.getBoard().numberOfCards("close"); i++) {
-            cardsOnField[i] = new CardDTO(gwent.getBoard().getCard(i).getCardName(), gwent.getBoard().getCard(i).getCardID());
+        cardsOnFieldPlayer1 = new CardDTO[gwent.getBoard().numberOfCards("close", 1)];
+        for(int i = 0; i < gwent.getBoard().numberOfCards("close", 1); i++) {
+            cardsOnFieldPlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1).getCardName(),
+                    gwent.getBoard().getCard(i, 1).getCardID());
+        }
+        cardsOnFieldPlayer2 = new CardDTO[gwent.getBoard().numberOfCards("close", 2)];
+        for(int i = 0; i < gwent.getBoard().numberOfCards("close", 2); i++) {
+            cardsOnFieldPlayer2[i] = new CardDTO(gwent.getBoard().getCard(i, 2).getCardName(),
+                    gwent.getBoard().getCard(i, 2).getCardID());
         }
     }
 };

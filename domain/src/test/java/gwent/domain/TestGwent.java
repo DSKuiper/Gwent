@@ -5,18 +5,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestGwent {
 
     @Test
-    public void TestGetNumberOfCardsReturns0AtStartOfGame() {
+    public void TestGetNumberOfCardsInTheFieldReturns0AtStartOfGame() {
         Gwent testGwent = new Gwent();
-        assertEquals(0, testGwent.getNumberOfCards());
+        assertEquals(0, testGwent.getNumberOfCards(1));
     }
 
     @Test
     public void TestPlayCardMovesTestCardToBoard() {
         Gwent testGwent = new Gwent();
         UnitCard testCard = new UnitCard("testCard");
-        testGwent.getHand().addCard(testCard);
-        testGwent.playCard(testCard.getCardID());
-        assertEquals(testCard, testGwent.getBoard().getCard(0));
+        testGwent.getPlayer1().getHand().addCard(testCard);
+        testGwent.playCard(testCard.getCardID(), 1);
+        assertEquals(testCard, testGwent.getBoard().getCard(0, 1));
     }
 
     //meaningless tests for coverage:
@@ -29,7 +29,7 @@ public class TestGwent {
     @Test
     public void TestGetHandReturnsHand() {
         Gwent testGwent = new Gwent();
-        assertEquals(Hand.class, testGwent.getHand().getClass());
+        assertEquals(Hand.class, testGwent.getPlayer2().getHand().getClass());
     }
 
 

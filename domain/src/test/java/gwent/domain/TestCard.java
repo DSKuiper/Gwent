@@ -23,9 +23,20 @@ public class TestCard {
     @Test
     public void testPlayCardSendsCardToPlayingField() {
         Card testCard = new UnitCard("ciri");
-        Board testBoard = new Board();
-        Hand testHand = new Hand();
-        testCard.play(testBoard, testHand);
-        assertEquals(testCard, testBoard.getCard(/*1, close, */ 0));
+        Player testPlayer1 = new Player(1);
+        Player testPlayer2 = new Player(2);
+        Board testBoard = new Board(testPlayer1, testPlayer2);
+        testCard.play(testBoard, testPlayer1.hand, 1);
+        assertEquals(testCard, testBoard.getCard(/* close, */ 0, 1));
+    }
+
+    @Test
+    public void testPlayCardSendsCardToPlayingFieldPlayer2() {
+        Card testCard = new UnitCard("ciri");
+        Player testPlayer1 = new Player(1);
+        Player testPlayer2 = new Player(2);
+        Board testBoard = new Board(testPlayer1, testPlayer2);
+        testCard.play(testBoard, testPlayer2.hand, 2);
+        assertEquals(testCard, testBoard.getCard(0, 2));
     }
 }

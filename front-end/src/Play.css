@@ -3,9 +3,10 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  position:absolute;
+  position:fixed;
 }
 
+/*
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -41,6 +42,7 @@
 div, span {
     display: inline-block
 }
+*/
 
 .divfix {
        bottom: 0;
@@ -56,6 +58,16 @@ div, span {
     background-size: auto 200px;
 }
 
+#close1 {
+    background-image: url("./assets/Close-Range-1.png");
+    top: 50%;
+}
+
+#close2 {
+    background-image: url("./assets/Close-Range-2.png");
+    bottom: 50%;
+}
+
 .card-in-field {
     height: 200px;
     width: 106px;
@@ -64,29 +76,20 @@ div, span {
     background-size: 107px 200px;
     background-position: center;
     position: relative;
-
     pointer-events: none;
 }
 
-#close1 {
-    background-image: url("./assets/Close-Range-1.png");
-    top: 50%;
-    left: 20%;
-}
-
-#close2 {
-    background-image: url("./assets/Close-Range-2.png");
-    bottom: 50%;
-    left: 20%;
-}
-
-/*TODO fix card positions for single cards */
 .close1Cards {
     position: relative;
-    left: 230%;
-    bottom: -50px;
+    left: 80%;
+    bottom: -245px;
 }
 
+.close2Cards {
+    position: relative;
+    left: 80%;
+    bottom: 160px;
+}
 
 .card {
     height: 300px;
@@ -96,19 +99,19 @@ div, span {
     background-size: 160px 300px;
     background-position: center;
     position: relative;
-    bottom: -500px;
-    left: 50%;
+    left: 80%;
 }
 
-/*cards */
-#Ciri {
-  background-image: url('./assets/Ciri.png');
+.player1 {
+    bottom: -1100px;
 }
 
-#Yarpen-Zigrin {
-  background-image: url('./assets/Yarpen-Zigrin.png');
+.player2 {
+    top: 0px;
 }
 
-#Redenian-Foot-Soldier {
-  background-image: url('./assets/Redenian-Foot-Soldier.png');
+.empty-hand {
+    color: transparent;
+    background-color: transparent;
+    pointer-events: none;
 }

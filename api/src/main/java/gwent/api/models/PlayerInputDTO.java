@@ -1,14 +1,23 @@
 package gwent.api.models;
 
 public class PlayerInputDTO {
+    private String cardID;
+    private int player;
 
-    private String cardToPlay;
-
-    public void setCardToPlay(String cardToPlay) {
-        this.cardToPlay = cardToPlay;
+    public String getCardID() {
+        return cardID;
     }
 
-    public String getCardToPlay() {
-        return cardToPlay;
+    public void setCardID(String cardID) {
+        this.cardID = cardID;
     }
+
+    public int getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(int player) {
+        this.player = player;
+    }
+
 }
