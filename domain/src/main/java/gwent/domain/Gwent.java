@@ -54,4 +54,8 @@ public class Gwent implements IGwent {
     public Player getPlayer2() {
         return player2;
     }
+
+    public int getScore(String range, int player) {
+        return board.getScore(range, player);
+    }
 }

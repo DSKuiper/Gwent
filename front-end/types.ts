@@ -1,6 +1,7 @@
 export type GameState = {
     player: Player[];
     board: Board;
+    scores: Scores;
 }
 
 export type Player = {
@@ -20,6 +21,11 @@ export type Board = {
 export type Card = {
     cardName: string;
     cardID: string;
+}
+
+export type Scores = {
+    scoreCloseRangePlayer1: int;
+    scoreCloseRangePlayer2: int;
 }
 
 export function isGameState(game: unknown): gameState is GameState {
