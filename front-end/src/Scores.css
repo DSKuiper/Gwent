@@ -1,0 +1,18 @@
+
+.scores {
+    font-size: 35px;
+    color: black;
+    text-shadow: 2px 2px 2px white;
+    position: relative;
+    left: -401px;
+}
+
+#closePoints1 {
+    position: relative;
+    top: 410px;
+}
+
+#closePoints2 {
+    position: relative;
+    top: 209px;
+}

@@ -6,6 +6,7 @@ import { useGwentGame } from './context/GwentGameContext'
 import './Play.css'
 import './Cards.css'
 import './Field.css'
+import './Scores.css'
 
 function CardInHand({ cardImg, player, onCardClick }) {
     const { gameState, setGameState } = useGwentGame();
@@ -89,6 +90,7 @@ export const Play = () => {
     }
 
     return <>
+    <link href="https://fonts.cdnfonts.com/css/gliscor-gothic" rel="stylesheet"/>
     <div>
         {cardsInHandPlayer2}
     </div>
@@ -108,6 +110,10 @@ export const Play = () => {
         <PlayingField field="close2"/>
     </div>
     <div id="background" className="background">
+    </div>
+    <div className="scores">
+        <div id="closePoints1">{gameState?.scores.scoreCloseRangePlayer1}</div>
+        <div id="closePoints2">{gameState?.scores.scoreCloseRangePlayer2}</div>
     </div>
     </>
 };
