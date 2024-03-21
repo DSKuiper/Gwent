@@ -13,7 +13,7 @@ public class TestGwent {
     @Test
     public void TestPlayCardMovesTestCardToBoard() {
         Gwent testGwent = new Gwent();
-        UnitCard testCard = new UnitCard("testCard");
+        UnitCard testCard = new UnitCard("testCard", 1);
         testGwent.getPlayer1().getHand().addCard(testCard);
         testGwent.playCard(testCard.getCardID(), 1);
         assertEquals(testCard, testGwent.getBoard().getCard(0, 1));

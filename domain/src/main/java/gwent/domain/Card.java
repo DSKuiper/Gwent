@@ -5,10 +5,12 @@ import static java.util.UUID.randomUUID;
 public abstract class Card {
     protected String cardID;
     protected String cardName;
+    protected int cardValue;
 
-    public Card(String cardName /*, Board range*/) {
+    public Card(String cardName, int value /*, Board range*/) {
         this.cardName = cardName;
         this.cardID = randomUUID().toString();
+        this.cardValue = value;
     }
 
     public String getCardID() {

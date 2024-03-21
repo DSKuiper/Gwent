@@ -43,4 +43,7 @@ public class Board {
     public ArrayList<Card> getCloseRangePlayer2() {
         return closeRangePlayer2;
     }
+
+    public int getScore(String range, int player) {
+    }
 }
