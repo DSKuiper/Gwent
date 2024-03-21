@@ -2,7 +2,6 @@ package gwent.api.models;
 
 public class CardDTO {
     private String cardName;
-
     private String cardID;
 
     public CardDTO(String cardName, String cardID) {

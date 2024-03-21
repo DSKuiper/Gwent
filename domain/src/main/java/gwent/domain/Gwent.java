@@ -54,4 +54,14 @@ public class Gwent implements IGwent {
     public Player getPlayer2() {
         return player2;
     }
+
+    public int getScore(String range, int player) {
+        return board.getScore(range, player);
+    }
+
+    public int getTotalScore(int player) {
+        return board.getScore("close", player) +
+                board.getScore("ranged", player) +
+                board.getScore("siege", player);
+    }
 }

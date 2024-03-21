@@ -43,4 +43,23 @@ public class Board {
     public ArrayList<Card> getCloseRangePlayer2() {
         return closeRangePlayer2;
     }
+
+    public int getScore(String range, int player) {
+        int score = 0;
+        switch(range) {
+            case "close":
+                if(player == 1) {
+                    for(Card card : closeRangePlayer1) {
+                        score += card.cardValue;
+                    }
+                } else {
+                    for(Card card : closeRangePlayer2) {
+                        score += card.cardValue;
+                    }
+                }
+            case "ranged": score += 0;
+            case "siege": score += 0;
+        }
+        return score;
+    }
 }

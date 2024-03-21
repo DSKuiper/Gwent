@@ -1,0 +1,34 @@
+
+.scores {
+    font-size: 35px;
+    color: black;
+    text-shadow: 2px 2px 2px white;
+    position: relative;
+    left: -401px;
+}
+
+#totalPoints1 {
+    font-size: 55px;
+    text-shadow: 4px 4px 4px white;
+    position: relative;
+    left: -85px;
+    top: 524px;
+}
+
+#totalPoints2 {
+    font-size: 55px;
+    text-shadow: 4px 4px 4px white;
+    position: relative;
+    left: -85px;
+    top: 24px;
+}
+
+#closePoints1 {
+    position: relative;
+    top: 243px;
+}
+
+#closePoints2 {
+    position: relative;
+    top: 44px;
+}

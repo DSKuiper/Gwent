@@ -1,7 +1,7 @@
 export type GameState = {
     player: Player[];
-    cardsOnFieldPlayer1: Card[];
-    cardsOnFieldPlayer2: Card[];
+    board: Board;
+    scores: Scores;
 }
 
 export type Player = {
@@ -13,9 +13,21 @@ export type Hand = {
     cards: Card[];
 }
 
+export type Board = {
+    cardsOnFieldPlayer1: Card[];
+    cardsOnFieldPlayer2: Card[];
+}
+
 export type Card = {
     cardName: string;
     cardID: string;
+}
+
+export type Scores = {
+    totalScorePlayer1: int;
+    totalScorePlayer2: int;
+    scoreCloseRangePlayer1: int;
+    scoreCloseRangePlayer2: int;
 }
 
 export function isGameState(game: unknown): gameState is GameState {
