@@ -18,4 +18,6 @@ public interface IGwent {
     Player getPlayer2();
 
     int getScore(String range, int player);
+
+    int getTotalScore(int player);
 }

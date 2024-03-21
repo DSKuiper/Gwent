@@ -57,8 +57,8 @@ public class Board {
                         score += card.cardValue;
                     }
                 }
-            case "ranged":
-            case "siege":
+            case "ranged": score += 0;
+            case "siege": score += 0;
         }
         return score;
     }

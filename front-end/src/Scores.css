@@ -7,12 +7,28 @@
     left: -401px;
 }
 
+#totalPoints1 {
+    font-size: 55px;
+    text-shadow: 4px 4px 4px white;
+    position: relative;
+    left: -85px;
+    top: 524px;
+}
+
+#totalPoints2 {
+    font-size: 55px;
+    text-shadow: 4px 4px 4px white;
+    position: relative;
+    left: -85px;
+    top: 24px;
+}
+
 #closePoints1 {
     position: relative;
-    top: 410px;
+    top: 243px;
 }
 
 #closePoints2 {
     position: relative;
-    top: 209px;
+    top: 44px;
 }

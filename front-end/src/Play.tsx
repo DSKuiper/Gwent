@@ -112,6 +112,8 @@ export const Play = () => {
     <div id="background" className="background">
     </div>
     <div className="scores">
+        <div id="totalPoints1">{gameState?.scores.totalScorePlayer1}</div>
+        <div id="totalPoints2">{gameState?.scores.totalScorePlayer2}</div>
         <div id="closePoints1">{gameState?.scores.scoreCloseRangePlayer1}</div>
         <div id="closePoints2">{gameState?.scores.scoreCloseRangePlayer2}</div>
     </div>

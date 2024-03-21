@@ -24,6 +24,8 @@ export type Card = {
 }
 
 export type Scores = {
+    totalScorePlayer1: int;
+    totalScorePlayer2: int;
     scoreCloseRangePlayer1: int;
     scoreCloseRangePlayer2: int;
 }
