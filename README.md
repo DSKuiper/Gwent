@@ -16,16 +16,17 @@ This repository contains my personal project that concludes my traineeship at So
 ## MoSCoW requirements
 
 #### Must
-- [ ] UI with:
-    - [ ] A clickable card that goes to the field when clicked 
+- [x] UI with:
+    - [x] A clickable card that goes to the field when clicked 
     - [x] A simple field with one row per player (where players put their cards)
-    - [ ] Show points for both players
-- [ ] Unit cards with a value, no special abilities or specific playing field
-- [ ] Have a point system that calculates the points both players have on their playing field
+    - [x] Show points for both players
+- [x] Unit cards with a value, no special abilities or specific playing field
+- [x] Have a point system that calculates the points both players have on their playing field
 
 #### Should
 - [ ] functionality:
     - [ ] Add automatic random deck and hand building
+    - [ ] Add active state to players and switch between players
     - [ ] Add rounds to the game
     - [ ] Allow players to end the round
     - [ ] Add funcitonality for leader cards
