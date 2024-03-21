@@ -45,5 +45,21 @@ public class Board {
     }
 
     public int getScore(String range, int player) {
+        int score = 0;
+        switch(range) {
+            case "close":
+                if(player == 1) {
+                    for(Card card : closeRangePlayer1) {
+                        score += card.cardValue;
+                    }
+                } else {
+                    for(Card card : closeRangePlayer2) {
+                        score += card.cardValue;
+                    }
+                }
+            case "ranged":
+            case "siege":
+        }
+        return score;
     }
 }
