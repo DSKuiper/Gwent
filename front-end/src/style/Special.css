@@ -1,0 +1,34 @@
+
+/* template:
+# {
+    background-image: url('./assets/special/.png');
+}
+*/
+
+#Biting-Frost {
+    background-image: url('./assets/special/Biting-Frost.png');
+}
+
+#Clear-Weather {
+    background-image: url('./assets/special/Clear-Weather.png');
+}
+
+#Commanders-Horn {
+    background-image: url('./assets/special/Commanders-Horn.png');
+}
+
+#Decoy {
+    background-image: url('./assets/special/Decoy.png');
+}
+
+#Impenetrable-Fog {
+    background-image: url('./assets/special/Impenetrable-Fog.png');
+}
+
+#Scorch {
+    background-image: url('./assets/special/Scorch.png');
+}
+
+#Torrential-Rain {
+    background-image: url('./assets/special/Torrential-Rain.png');
+}

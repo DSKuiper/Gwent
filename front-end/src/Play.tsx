@@ -98,16 +98,16 @@ export const Play = () => {
         {cardsInHandPlayer1}
     </div>
     <div className="divFix">
-        <PlayingField field="close1"/>
-        <div className="close1Cards">
+        <PlayingField field="Close-Range-1"/>
+        <div className="Close-Range-1-Cards">
             {cardsOnFieldPlayer1}
         </div>
     </div>
     <div className="divFix">
-        <div className="close2Cards">
+        <div className="Close-Range-2-Cards">
             {cardsOnFieldPlayer2}
         </div>
-        <PlayingField field="close2"/>
+        <PlayingField field="Close-Range-2"/>
     </div>
     <div id="background" className="background">
     </div>
