@@ -6,7 +6,7 @@ public class TestBoard {
     @Test
     public void TestAddCardForPlayer1AddsCardToPlayer1Field() {
         Gwent testGwent = new Gwent();
-        UnitCard testcard = new UnitCard("testcard", 1);
+        Card testcard = new Card("testcard", 1);
         testGwent.getPlayer1().getHand().addCard(testcard);
         testGwent.playCard(testcard.getCardID(), 1);
         assertEquals(1, testGwent.getBoard().getCloseRangePlayer1().size());
@@ -16,7 +16,7 @@ public class TestBoard {
     @Test
     public void TestAddCardForPlayer2AddsCardToPlayer2Field() {
         Gwent testGwent = new Gwent();
-        UnitCard testcard = new UnitCard("testcard", 1);
+        Card testcard = new Card("testcard", 1);
         testGwent.getPlayer2().getHand().addCard(testcard);
         testGwent.playCard(testcard.getCardID(), 2);
         assertEquals(0, testGwent.getBoard().getCloseRangePlayer1().size());
@@ -26,7 +26,7 @@ public class TestBoard {
     @Test
     public void TestAddingScoresAfterOnePlayedCard() {
         Gwent testGwent = new Gwent();
-        UnitCard testcard = new UnitCard("testcard", 10);
+        Card testcard = new Card("testcard", 10);
         testGwent.getPlayer1().getHand().addCard(testcard);
         testGwent.playCard(testcard.getCardID(), 1);
         assertEquals(10, testGwent.getBoard().getScore("close", 1));
@@ -35,10 +35,10 @@ public class TestBoard {
     @Test
     public void TestAddingScoresAfterTwoPlayedcards() {
         Gwent testGwent = new Gwent();
-        UnitCard testcard = new UnitCard("testcard", 10);
+        Card testcard = new Card("testcard", 10);
         testGwent.getPlayer2().getHand().addCard(testcard);
         testGwent.playCard(testcard.getCardID(), 2);
-        UnitCard testcard2 = new UnitCard("testcard2", 5);
+        Card testcard2 = new Card("testcard2", 5);
         testGwent.getPlayer2().getHand().addCard(testcard2);
         testGwent.playCard(testcard2.getCardID(), 2);
         assertEquals(15, testGwent.getBoard().getScore("close", 2));

@@ -6,12 +6,12 @@ public class Hand {
     private ArrayList<Card> hand = new ArrayList<>();
 
     public Hand() {
-        hand.add(new UnitCard("Ciri-1", 15));
-        hand.add(new UnitCard("Redenian-Foot-Soldier-1", 1));
-        hand.add(new UnitCard("Ciri-2", 15));
-        hand.add(new UnitCard("Redenian-Foot-Soldier-1", 1));
-        hand.add(new UnitCard("Ciri-1", 15));
-        hand.add(new UnitCard("Redenian-Foot-Soldier-1", 1));
+        hand.add(new Card("Ciri-1", 15));
+        hand.add(new Card("Redenian-Foot-Soldier-1", 1));
+        hand.add(new Card("Ciri-2", 15));
+        hand.add(new Card("Redenian-Foot-Soldier-1", 1));
+        hand.add(new Card("Ciri-1", 15));
+        hand.add(new Card("Redenian-Foot-Soldier-1", 1));
     }
 
     public Card getCard(/*int player, String range,*/ int index) {

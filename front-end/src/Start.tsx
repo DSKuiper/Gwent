@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useGwentGame } from './context/GwentGameContext'
 import { isGameState } from '../Types'
-import './Play.css'
+import './style/Play.css'
 
 
 export const Start = () => {

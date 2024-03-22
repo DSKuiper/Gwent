@@ -3,10 +3,11 @@ import { useState } from 'react'
 import { Card } from '../Types'
 import { isGameState } from '../Types'
 import { useGwentGame } from './context/GwentGameContext'
-import './Play.css'
-import './Cards.css'
-import './Field.css'
-import './Scores.css'
+import './style/Play.css'
+import './style/Northern-Realms.css'
+import './style/Neutrals.css'
+import './style/Field.css'
+import './style/Scores.css'
 
 function CardInHand({ cardImg, player, onCardClick }) {
     const { gameState, setGameState } = useGwentGame();

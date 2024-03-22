@@ -35,48 +35,48 @@
 
 /* template:
 # {
-    background-image: url('./assets/field/.png');
+    background-image: url('.././assets/field/.png');
     top: px;
     left: px;
 }
 */
 
 #background {
-    background-image: url('./assets/field/Background.jpg');
+    background-image: url('.././assets/field/Background.jpg');
 }
 
 #Close-Range-1 {
-    background-image: url('./assets/Field/Close-Range-1.png');
+    background-image: url('.././assets/field/Close-Range-1.png');
     top: 673px;
     left: 178px;
 }
 
 #Close-Range-2 {
-    background-image: url('./assets/Field/Close-Range-2.png');
+    background-image: url('.././assets/field/Close-Range-2.png');
     top: 400px;
     left: 178px;
 }
 
 #Ranged-1 {
-    background-image: url('./assets/field/Ranged-1.png');
+    background-image: url('.././assets/field/Ranged-1.png');
     top: px;
     left: px;
 }
 
 #Ranged-2 {
-    background-image: url('./assets/field/Ranged-2.png');
+    background-image: url('.././assets/field/Ranged-2.png');
     top: px;
     left: px;
 }
 
 #Siege-1 {
-    background-image: url('./assets/field/Siege-1.png');
+    background-image: url('.././assets/field/Siege-1.png');
     top: px;
     left: px;
 }
 
 #Siege-2 {
-    background-image: url('./assets/field/Siege-2.png');
+    background-image: url('.././assets/field/Siege-2.png');
     top: px;
     left: px;
 }
