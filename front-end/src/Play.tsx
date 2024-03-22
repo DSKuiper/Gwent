@@ -8,6 +8,7 @@ import './style/Northern-Realms.css'
 import './style/Neutrals.css'
 import './style/Field.css'
 import './style/Scores.css'
+import './style/Special.css'
 
 function CardInHand({ cardImg, player, onCardClick }) {
     const { gameState, setGameState } = useGwentGame();

@@ -2,16 +2,19 @@ package gwent.domain;
 
 import java.util.ArrayList;
 
+import static java.util.Collections.shuffle;
+
 public class Hand {
     private ArrayList<Card> hand = new ArrayList<>();
 
-    public Hand() {
-        hand.add(new Card("Ciri-1", 15));
-        hand.add(new Card("Redenian-Foot-Soldier-1", 1));
-        hand.add(new Card("Ciri-2", 15));
-        hand.add(new Card("Redenian-Foot-Soldier-1", 1));
-        hand.add(new Card("Ciri-1", 15));
-        hand.add(new Card("Redenian-Foot-Soldier-1", 1));
+    public Hand(DeckBuilder deck) {
+        ArrayList<Card> tempDeck = new ArrayList<>();
+        tempDeck.addAll(deck.unitCards);
+        tempDeck.addAll(deck.specialCards);
+        shuffle(tempDeck);
+        for(int i = 0; i < 10; i++) {
+            hand.add(tempDeck.get(i));
+        }
     }
 
     public Card getCard(/*int player, String range,*/ int index) {

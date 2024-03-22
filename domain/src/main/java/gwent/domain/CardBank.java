@@ -11,7 +11,10 @@ public class CardBank {
     protected ArrayList<Card> special = new ArrayList<>();
     public CardBank() {
         addNorthernRealms();
+        addNorthernRealms();
         addNeutralCards();
+        addSpecialCards();
+        addSpecialCards();
         addSpecialCards();
     }
 
@@ -31,7 +34,7 @@ public class CardBank {
         northernRealm.add(new Card("Sabrina-Glevissig", 4));
         northernRealm.add(new Card("Sheldon-Skaggs", 4));
         northernRealm.add(new Card("Siege-Tower", 6));
-        northernRealm.add(new Card("Siegfried-Of-Denesele", 5));
+        northernRealm.add(new Card("Siegfried-Of-Denesle", 5));
         northernRealm.add(new Card("Sile-De-Tansarville", 5));
         northernRealm.add(new Card("Trebuchet-1", 6));
         northernRealm.add(new Card("Trebuchet-2", 6));

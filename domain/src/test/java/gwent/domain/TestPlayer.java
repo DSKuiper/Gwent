@@ -7,7 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class TestPlayer {
     @Test
     public void TestPlayerHasHandAfterInitiation() {
-        Player testPlayer = new Player(1);
+        CardBank testBank = new CardBank();
+        Player testPlayer = new Player(1, testBank);
         assertNotNull(testPlayer.hand);
     }
 }

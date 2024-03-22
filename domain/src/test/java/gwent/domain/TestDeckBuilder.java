@@ -14,9 +14,9 @@ public class TestDeckBuilder {
     }
 
     @Test
-    public void TestInitializingDeckBuilderAdds8SpecialCardsToDeck() {
+    public void TestInitializingDeckBuilderAdds4SpecialCardsToDeck() {
         CardBank testBank = new CardBank();
         DeckBuilder testDeck = new DeckBuilder(testBank);
-        assertEquals(8, testDeck.specialCards.size());
+        assertEquals(4, testDeck.specialCards.size());
     }
 }

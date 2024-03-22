@@ -21,9 +21,10 @@ public class TestCard {
 
     @Test
     public void testPlayCardSendsCardToPlayingField() {
+        CardBank testBank = new CardBank();
         Card testCard = new Card("ciri", 15);
-        Player testPlayer1 = new Player(1);
-        Player testPlayer2 = new Player(2);
+        Player testPlayer1 = new Player(1, testBank);
+        Player testPlayer2 = new Player(2, testBank);
         Board testBoard = new Board(testPlayer1, testPlayer2);
         testCard.play(testBoard, testPlayer1.hand, 1);
         assertEquals(testCard, testBoard.getCard(/* close, */ 0, 1));
@@ -31,9 +32,10 @@ public class TestCard {
 
     @Test
     public void testPlayCardSendsCardToPlayingFieldPlayer2() {
+        CardBank testBank = new CardBank();
         Card testCard = new Card("ciri", 15);
-        Player testPlayer1 = new Player(1);
-        Player testPlayer2 = new Player(2);
+        Player testPlayer1 = new Player(1, testBank);
+        Player testPlayer2 = new Player(2, testBank);
         Board testBoard = new Board(testPlayer1, testPlayer2);
         testCard.play(testBoard, testPlayer2.hand, 2);
         assertEquals(testCard, testBoard.getCard(0, 2));

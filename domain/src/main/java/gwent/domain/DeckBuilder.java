@@ -11,7 +11,6 @@ public class DeckBuilder {
     public DeckBuilder(CardBank bank) {
         ArrayList<Card> tempUnitCards = new ArrayList<>();
         tempUnitCards.addAll(bank.northernRealm);
-        tempUnitCards.addAll(bank.northernRealm);
         tempUnitCards.addAll(bank.neutral);
         shuffle(tempUnitCards);
         for(int i = 0; i < 25; i++) {
@@ -19,11 +18,9 @@ public class DeckBuilder {
         }
 
         ArrayList<Card> tempSpecialCards = new ArrayList<>();
-        while(tempSpecialCards.size() < 8) {
-            tempSpecialCards.addAll(bank.special);
-        }
+        tempSpecialCards.addAll(bank.special);
         shuffle(tempSpecialCards);
-        for(int i = 0; i < 8; i++) {
+        for(int i = 0; i < 4; i++) {
             specialCards.add(tempSpecialCards.get(i));
         }
     }
