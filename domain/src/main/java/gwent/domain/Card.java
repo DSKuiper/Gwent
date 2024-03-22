@@ -2,7 +2,7 @@ package gwent.domain;
 
 import static java.util.UUID.randomUUID;
 
-public abstract class Card {
+public class Card {
     protected String cardID;
     protected String cardName;
     protected int cardValue;

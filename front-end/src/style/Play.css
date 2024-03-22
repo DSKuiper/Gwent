@@ -31,7 +31,32 @@
     z-index: -1;
 }
 
+.card {
+    height: 150px;
+    width: 80px;
+    border-radius: 10px;
+    margin: 1px;
+    background-size: 80px 150px;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+}
 
+.player2 {
+    top: 100px;
+    left: 100px;
+}
+
+.player1 {
+    top: 920px;
+    left: 100px;
+}
+
+.empty-card {
+    color: transparent;
+    background-color: transparent;
+    pointer-events: none;
+}
 
 
 /*

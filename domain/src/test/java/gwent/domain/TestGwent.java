@@ -13,7 +13,7 @@ public class TestGwent {
     @Test
     public void TestPlayCardMovesTestCardToBoard() {
         Gwent testGwent = new Gwent();
-        UnitCard testCard = new UnitCard("testCard", 1);
+        Card testCard = new Card("testCard", 1);
         testGwent.getPlayer1().getHand().addCard(testCard);
         testGwent.playCard(testCard.getCardID(), 1);
         assertEquals(testCard, testGwent.getBoard().getCard(0, 1));
@@ -35,10 +35,10 @@ public class TestGwent {
     @Test
     public void TestGetScoreReturnsCorrectScoreAfterPlayingTwoCards() {
         Gwent testGwent = new Gwent();
-        UnitCard testcard = new UnitCard("testcard", 10);
+        Card testcard = new Card("testcard", 10);
         testGwent.getPlayer2().getHand().addCard(testcard);
         testGwent.playCard(testcard.getCardID(), 2);
-        UnitCard testcard2 = new UnitCard("testcard2", 5);
+        Card testcard2 = new Card("testcard2", 5);
         testGwent.getPlayer2().getHand().addCard(testcard2);
         testGwent.playCard(testcard2.getCardID(), 2);
         assertEquals(15, testGwent.getScore("close", 2));
@@ -48,10 +48,10 @@ public class TestGwent {
     @Test
     public void TestGetTotalScoreReturnsCorrectScoreAfterPlayingTwoCards() {
         Gwent testGwent = new Gwent();
-        UnitCard testcard = new UnitCard("testcard", 10);
+        Card testcard = new Card("testcard", 10);
         testGwent.getPlayer2().getHand().addCard(testcard);
         testGwent.playCard(testcard.getCardID(), 2);
-        UnitCard testcard2 = new UnitCard("testcard2", 5);
+        Card testcard2 = new Card("testcard2", 5);
         testGwent.getPlayer2().getHand().addCard(testcard2);
         testGwent.playCard(testcard2.getCardID(), 2);
         assertEquals(15, testGwent.getTotalScore( 2));

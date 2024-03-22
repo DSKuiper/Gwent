@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+import './style/index.css'
 import { GwentGameProvider } from './context/GwentGameContext'
 import { Gwent } from './Gwent'
 
