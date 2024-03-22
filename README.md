@@ -25,7 +25,7 @@ This repository contains my personal project that concludes my traineeship at So
 
 #### Should
 - [ ] functionality:
-    - [ ] Add automatic random deck and hand building
+    - [x] Add automatic random deck and hand building
     - [ ] Add active state to players and switch between players
     - [ ] Add rounds to the game
     - [ ] Allow players to end the round
