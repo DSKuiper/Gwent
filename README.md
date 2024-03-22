@@ -42,7 +42,7 @@ This repository contains my personal project that concludes my traineeship at So
         - [ ] Tight bond (when placed next to a card of the same type, double strength of both cards)
         - [ ] Muster (go through your deck and play all cards of the same type immediately)
     - [ ] Weather cards:
-        - [ ] Bad weather (set value to 1 for every card in the playing field) 
+        - [ ] Bad weather cards (set value to 1 for every card for that card's range) 
         - [ ] Clear weather (clear the negative effect of bad weather)
     - [ ] Add the decoy item (swap with a card in your field)
     - [ ] Add special character cards (unit cards with a high value and ability)
@@ -63,7 +63,6 @@ This repository contains my personal project that concludes my traineeship at So
         - [ ] Scorch (if the opponent has a total strength of at least 10 on this cards row, kill that row's strongest card)
     - [ ] Add commander's horn: double the value of all cards in the chosen playing field
     - [ ] Add scorch item
-    - [ ] Fully implement the weather cards (one for each combat range)
 
 #### Would
 - [ ] Switch the view for player 1 and 2
