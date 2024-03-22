@@ -56,7 +56,14 @@ public class CardBank {
     
     public void addSpecialCards() {
         /* template add:
-        bank.add(new Card("", ));
+        bank.add(new Card("", 0));
         */
+        bank.add(new Card("Biting-Frost", 0));
+        bank.add(new Card("Clear-Weather", 0));
+        //bank.add(new Card("Commanders-Horn", 0));
+        //bank.add(new Card("Decoy", 0));
+        //bank.add(new Card("Impenetrable-Fog", 0));
+        //bank.add(new Card("Scorch", 0));
+        //bank.add(new Card("Torrential-Rain", 0));
     }
 }

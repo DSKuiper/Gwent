@@ -37,7 +37,7 @@ public class TestCardBank {
         CardBank testBank = new CardBank();
         boolean test = false;
         for(Card card : testBank.bank) {
-            if(card.getCardName().equals("Torrential-Rain")) {
+            if(card.getCardName().equals("Clear-Weather")) {
                 test = true;
                 break;
             }
