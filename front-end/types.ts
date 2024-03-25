@@ -33,6 +33,10 @@ export type Scores = {
     totalScorePlayer2: int;
     scoreCloseRangePlayer1: int;
     scoreCloseRangePlayer2: int;
+    scoreRangedPlayer1: int;
+    scoreRangedPlayer2: int;
+    scoreSiegePlayer1: int;
+    scoreSiegePlayer2: int;
 }
 
 export function isGameState(game: unknown): gameState is GameState {
