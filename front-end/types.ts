@@ -16,11 +16,16 @@ export type Hand = {
 export type Board = {
     cardsOnFieldPlayer1: Card[];
     cardsOnFieldPlayer2: Card[];
+    rangedPlayer1: Card[];
+    rangedPlayer2: Card[];
+    siegePlayer1: Card[];
+    siegePlayer2: Card[];
 }
 
 export type Card = {
     cardName: string;
     cardID: string;
+    range: string;
 }
 
 export type Scores = {

@@ -11,7 +11,7 @@ public interface IGwent {
 
     Board getBoard();
 
-    int getNumberOfCards(int player);
+    int getNumberOfCards(String range, int player);
 
     Player getPlayer1();
 

@@ -5,36 +5,77 @@ import java.util.ArrayList;
 public class Board {
     private ArrayList<Card> closeRangePlayer1 = new ArrayList<>();
     private ArrayList<Card> closeRangePlayer2 = new ArrayList<>();
+    private ArrayList<Card> rangedPlayer1 = new ArrayList<>();
+    private ArrayList<Card> rangedPlayer2 = new ArrayList<>();
+    private ArrayList<Card> siegePlayer1 = new ArrayList<>();
+    private ArrayList<Card> siegePlayer2 = new ArrayList<>();
 
-    public Card getCard( /*String range,*/ int index, int player) {
-        if (player == 1) {
-            return closeRangePlayer1.get(index);
-        } else {
-            return closeRangePlayer2.get(index);
+    public Card getCard(int index, int player, String range) {
+        switch(range) {
+            case "close":
+                if(player == 1) {
+                    return closeRangePlayer1.get(index);
+                } else {
+                    return closeRangePlayer2.get(index);
+                }
+            case "ranged":
+                if(player == 1) {
+                    return rangedPlayer1.get(index);
+                } else {
+                    return rangedPlayer2.get(index);
+                }
+            case "siege":
+                if(player == 1) {
+                    return siegePlayer1.get(index);
+                } else {
+                    return siegePlayer2.get(index);
+                }
         }
     }
 
     public int numberOfCards(String range, int player) {
-        if(player == 1) {
-            return closeRangePlayer1.size();
-        } else {
-            return closeRangePlayer2.size();
+        switch(range) {
+            case "close":
+                if (player == 1) {
+                    return closeRangePlayer1.size();
+                } else {
+                    return closeRangePlayer2.size();
+                }
+            case "ranged":
+                if (player == 1) {
+                    return rangedPlayer1.size();
+                } else {
+                    return rangedPlayer2.size();
+                }
+            case "siege":
+                if (player == 1) {
+                    return siegePlayer1.size();
+                } else {
+                    return siegePlayer2.size();
+                }
         }
     }
     public void addCard(Card playedCard, int player) {
-        if(player == 1) {
-            closeRangePlayer1.add(playedCard);
-        } else {
-            closeRangePlayer2.add(playedCard);
+        switch(playedCard.getRange()) {
+            case "close":
+                if(player == 1) {
+                    closeRangePlayer1.add(playedCard);
+                } else {
+                    closeRangePlayer2.add(playedCard);
+                }
+            case "ranged":
+                if(player == 1) {
+                    rangedPlayer1.add(playedCard);
+                } else {
+                    rangedPlayer2.add(playedCard);
+                }
+            case "siege":
+                if(player == 1) {
+                    siegePlayer1.add(playedCard);
+                } else {
+                    siegePlayer2.add(playedCard);
+                }
         }
-    }
-
-    public ArrayList<Card> getCloseRangePlayer1() {
-        return closeRangePlayer1;
-    }
-
-    public ArrayList<Card> getCloseRangePlayer2() {
-        return closeRangePlayer2;
     }
 
     public int getScore(String range, int player) {
@@ -50,9 +91,75 @@ public class Board {
                         score += card.cardValue;
                     }
                 }
-            case "ranged": score += 0;
-            case "siege": score += 0;
+            case "ranged":
+                if(player == 1) {
+                    for(Card card : rangedPlayer1) {
+                        score += card.cardValue;
+                    }
+                } else {
+                    for(Card card : rangedPlayer2) {
+                        score += card.cardValue;
+                    }
+                }
+            case "siege":
+                if(player == 1) {
+                    for(Card card : siegePlayer1) {
+                        score += card.cardValue;
+                    }
+                } else {
+                    for(Card card : siegePlayer2) {
+                        score += card.cardValue;
+                    }
+                }
         }
         return score;
+    }
+
+    public ArrayList<Card> getCloseRangePlayer1() {
+        return closeRangePlayer1;
+    }
+
+    public void setCloseRangePlayer1(ArrayList<Card> closeRangePlayer1) {
+        this.closeRangePlayer1 = closeRangePlayer1;
+    }
+
+    public ArrayList<Card> getCloseRangePlayer2() {
+        return closeRangePlayer2;
+    }
+
+    public void setCloseRangePlayer2(ArrayList<Card> closeRangePlayer2) {
+        this.closeRangePlayer2 = closeRangePlayer2;
+    }
+
+    public ArrayList<Card> getRangedPlayer1() {
+        return rangedPlayer1;
+    }
+
+    public void setRangedPlayer1(ArrayList<Card> rangedPlayer1) {
+        this.rangedPlayer1 = rangedPlayer1;
+    }
+
+    public ArrayList<Card> getRangedPlayer2() {
+        return rangedPlayer2;
+    }
+
+    public void setRangedPlayer2(ArrayList<Card> rangedPlayer2) {
+        this.rangedPlayer2 = rangedPlayer2;
+    }
+
+    public ArrayList<Card> getSiegePlayer1() {
+        return siegePlayer1;
+    }
+
+    public void setSiegePlayer1(ArrayList<Card> siegePlayer1) {
+        this.siegePlayer1 = siegePlayer1;
+    }
+
+    public ArrayList<Card> getSiegePlayer2() {
+        return siegePlayer2;
+    }
+
+    public void setSiegePlayer2(ArrayList<Card> siegePlayer2) {
+        this.siegePlayer2 = siegePlayer2;
     }
 }
