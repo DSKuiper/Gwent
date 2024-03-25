@@ -31,50 +31,61 @@ public class Board {
                     return siegePlayer2.get(index);
                 }
         }
+        return null;
     }
 
     public int numberOfCards(String range, int player) {
         switch(range) {
-            case "close":
+            case "close": {
                 if (player == 1) {
                     return closeRangePlayer1.size();
                 } else {
                     return closeRangePlayer2.size();
                 }
-            case "ranged":
+            }
+            case "ranged": {
                 if (player == 1) {
                     return rangedPlayer1.size();
                 } else {
                     return rangedPlayer2.size();
                 }
-            case "siege":
+            }
+            case "siege": {
                 if (player == 1) {
                     return siegePlayer1.size();
                 } else {
                     return siegePlayer2.size();
                 }
+            }
         }
+        return 0;
     }
     public void addCard(Card playedCard, int player) {
         switch(playedCard.getRange()) {
-            case "close":
-                if(player == 1) {
+            case "close": {
+                if (player == 1) {
                     closeRangePlayer1.add(playedCard);
                 } else {
                     closeRangePlayer2.add(playedCard);
                 }
-            case "ranged":
-                if(player == 1) {
+                break;
+            }
+            case "ranged": {
+                if (player == 1) {
                     rangedPlayer1.add(playedCard);
                 } else {
                     rangedPlayer2.add(playedCard);
                 }
-            case "siege":
-                if(player == 1) {
+                break;
+            }
+            case "siege": {
+                if (player == 1) {
                     siegePlayer1.add(playedCard);
                 } else {
                     siegePlayer2.add(playedCard);
                 }
+                break;
+            }
         }
     }
 
@@ -91,6 +102,7 @@ public class Board {
                         score += card.cardValue;
                     }
                 }
+                break;
             case "ranged":
                 if(player == 1) {
                     for(Card card : rangedPlayer1) {
@@ -101,6 +113,7 @@ public class Board {
                         score += card.cardValue;
                     }
                 }
+                break;
             case "siege":
                 if(player == 1) {
                     for(Card card : siegePlayer1) {
@@ -111,6 +124,7 @@ public class Board {
                         score += card.cardValue;
                     }
                 }
+                break;
         }
         return score;
     }
@@ -119,47 +133,23 @@ public class Board {
         return closeRangePlayer1;
     }
 
-    public void setCloseRangePlayer1(ArrayList<Card> closeRangePlayer1) {
-        this.closeRangePlayer1 = closeRangePlayer1;
-    }
-
     public ArrayList<Card> getCloseRangePlayer2() {
         return closeRangePlayer2;
-    }
-
-    public void setCloseRangePlayer2(ArrayList<Card> closeRangePlayer2) {
-        this.closeRangePlayer2 = closeRangePlayer2;
     }
 
     public ArrayList<Card> getRangedPlayer1() {
         return rangedPlayer1;
     }
 
-    public void setRangedPlayer1(ArrayList<Card> rangedPlayer1) {
-        this.rangedPlayer1 = rangedPlayer1;
-    }
-
     public ArrayList<Card> getRangedPlayer2() {
         return rangedPlayer2;
-    }
-
-    public void setRangedPlayer2(ArrayList<Card> rangedPlayer2) {
-        this.rangedPlayer2 = rangedPlayer2;
     }
 
     public ArrayList<Card> getSiegePlayer1() {
         return siegePlayer1;
     }
 
-    public void setSiegePlayer1(ArrayList<Card> siegePlayer1) {
-        this.siegePlayer1 = siegePlayer1;
-    }
-
     public ArrayList<Card> getSiegePlayer2() {
         return siegePlayer2;
-    }
-
-    public void setSiegePlayer2(ArrayList<Card> siegePlayer2) {
-        this.siegePlayer2 = siegePlayer2;
     }
 }

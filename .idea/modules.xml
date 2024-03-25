@@ -3,16 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gwent/.idea/IP Gwent.iml" filepath="$PROJECT_DIR$/gwent/.idea/IP Gwent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sogyo.gwent.iml" filepath="$PROJECT_DIR$/.idea/modules/Sogyo.gwent.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/Sogyo.gwent.api.iml" filepath="$PROJECT_DIR$/.idea/modules/api/Sogyo.gwent.api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/Sogyo.gwent.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api/Sogyo.gwent.api.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/Sogyo.gwent.api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/api/Sogyo.gwent.api.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Sogyo.gwent.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Sogyo.gwent.domain.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Sogyo.gwent.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Sogyo.gwent.domain.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/Sogyo.gwent.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/Sogyo.gwent.domain.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/Sogyo.gwent.persistence.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/Sogyo.gwent.persistence.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/Sogyo.gwent.persistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/Sogyo.gwent.persistence.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/Sogyo.gwent.persistence.test.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/Sogyo.gwent.persistence.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/gwent.iml" filepath="$PROJECT_DIR$/.idea/modules/gwent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/gwent.api.iml" filepath="$PROJECT_DIR$/.idea/modules/api/gwent.api.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/gwent.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api/gwent.api.main.iml" />
@@ -23,6 +13,16 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/gwent.persistence.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/gwent.persistence.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/gwent.persistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/gwent.persistence.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/gwent.persistence.test.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/gwent.persistence.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sogyo.gwent.iml" filepath="$PROJECT_DIR$/.idea/modules/sogyo.gwent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/sogyo.gwent.api.iml" filepath="$PROJECT_DIR$/.idea/modules/api/sogyo.gwent.api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/sogyo.gwent.api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api/sogyo.gwent.api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api/sogyo.gwent.api.test.iml" filepath="$PROJECT_DIR$/.idea/modules/api/sogyo.gwent.api.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/sogyo.gwent.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/sogyo.gwent.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/sogyo.gwent.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/sogyo.gwent.domain.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/sogyo.gwent.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/sogyo.gwent.domain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/sogyo.gwent.persistence.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/sogyo.gwent.persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/sogyo.gwent.persistence.main.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/sogyo.gwent.persistence.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/persistence/sogyo.gwent.persistence.test.iml" filepath="$PROJECT_DIR$/.idea/modules/persistence/sogyo.gwent.persistence.test.iml" />
     </modules>
   </component>
 </project>

@@ -25,7 +25,7 @@ public class TestCard {
         Card testCard = new Card("ciri", 15, "close");
         Player testPlayer1 = new Player(1, testBank);
         Player testPlayer2 = new Player(2, testBank);
-        Board testBoard = new Board(testPlayer1, testPlayer2);
+        Board testBoard = new Board();
         testCard.play(testBoard, testPlayer1.hand, 1);
         assertEquals(testCard, testBoard.getCard(0, 1, "close"));
     }
@@ -36,7 +36,7 @@ public class TestCard {
         Card testCard = new Card("ciri", 15, "close");
         Player testPlayer1 = new Player(1, testBank);
         Player testPlayer2 = new Player(2, testBank);
-        Board testBoard = new Board(testPlayer1, testPlayer2);
+        Board testBoard = new Board();
         testCard.play(testBoard, testPlayer2.hand, 2);
         assertEquals(testCard, testBoard.getCard(0, 2, "close"));
     }
