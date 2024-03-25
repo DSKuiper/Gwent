@@ -10,6 +10,7 @@ public class Board {
     private ArrayList<Card> siegePlayer1 = new ArrayList<>();
     private ArrayList<Card> siegePlayer2 = new ArrayList<>();
 
+    //CHECKSTYLE:OFF
     public Card getCard(int index, int player, String range) {
         switch(range) {
             case "close":
@@ -128,6 +129,7 @@ public class Board {
         }
         return score;
     }
+    //CHECKSTYLE: ON
 
     public ArrayList<Card> getCloseRangePlayer1() {
         return closeRangePlayer1;

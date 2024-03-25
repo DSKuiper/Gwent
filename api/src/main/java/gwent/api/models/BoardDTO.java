@@ -10,7 +10,7 @@ public class BoardDTO {
     public CardDTO[] siegePlayer1;
     public CardDTO[] siegePlayer2;
 
-    public BoardDTO(IGwent gwent) throws Exception {
+    public BoardDTO(IGwent gwent) {
         cardsOnFieldPlayer1 = new CardDTO[gwent.getBoard().numberOfCards("close", 1)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("close", 1); i++) {
             cardsOnFieldPlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1, "close").getCardName(),
