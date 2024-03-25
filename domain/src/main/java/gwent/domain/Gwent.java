@@ -7,20 +7,12 @@ public class Gwent implements IGwent {
     private Player player1;
     private Player player2;
     private CardBank bank;
-    //private ArrayList<Card> closeRangePlayer1 = new ArrayList<>();
-    //private ArrayList<Card> closeRangePlayer2 = new ArrayList<>();
 
     public Gwent() {
         this.bank = new CardBank();
         this.player1 = new Player(1, bank);
         this.player2 = new Player(2, bank);
-        this.board = new Board(player1, player2);
-        /*for(int i = 0; i < board.numberOfCards("close", 1); i++ ) {
-            closeRangePlayer1.add(board.getCard(i,1));
-        }
-        for(int i = 0; i < board.numberOfCards("close", 2); i++ ) {
-            closeRangePlayer2.add(board.getCard(i, 2));
-        }*/
+        this.board = new Board();
     }
 
     public void playCard(String cardID, int player) {
@@ -45,8 +37,8 @@ public class Gwent implements IGwent {
     }
 
     @Override
-    public int getNumberOfCards(int player) {
-        return board.numberOfCards("close", player);
+    public int getNumberOfCards(String range, int player) {
+        return board.numberOfCards(range, player);
     }
 
     public Player getPlayer1() {

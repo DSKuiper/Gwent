@@ -16,11 +16,16 @@ export type Hand = {
 export type Board = {
     cardsOnFieldPlayer1: Card[];
     cardsOnFieldPlayer2: Card[];
+    rangedPlayer1: Card[];
+    rangedPlayer2: Card[];
+    siegePlayer1: Card[];
+    siegePlayer2: Card[];
 }
 
 export type Card = {
     cardName: string;
     cardID: string;
+    range: string;
 }
 
 export type Scores = {
@@ -28,6 +33,10 @@ export type Scores = {
     totalScorePlayer2: int;
     scoreCloseRangePlayer1: int;
     scoreCloseRangePlayer2: int;
+    scoreRangedPlayer1: int;
+    scoreRangedPlayer2: int;
+    scoreSiegePlayer1: int;
+    scoreSiegePlayer2: int;
 }
 
 export function isGameState(game: unknown): gameState is GameState {

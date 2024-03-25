@@ -15,7 +15,7 @@ function CardInHand({ cardImg, player, onCardClick }) {
     return (<button id={`${cardImg}`} className={`card ${player}`} onClick={onCardClick} />);
 }
 
-function CardInField({ cardImg }) {
+function CardInField({ cardImg, range }) {
     const { gameState, setGameState } = useGwentGame();
     return (<button className="card-in-field" id={`${cardImg}`} />);
 }
@@ -31,6 +31,10 @@ export const Play = () => {
     var cardsInHandPlayer2 = [];
     var cardsOnFieldPlayer1 = [];
     var cardsOnFieldPlayer2 = [];
+    var rangedPlayer1 = [];
+    var rangedPlayer2 = [];
+    var siegePlayer1 = [];
+    var siegePlayer2 = [];
 
     /*cardsOnBoardPlayer1*/
     if(gameState!.board.cardsOnFieldPlayer1.length == 0) {
@@ -47,6 +51,42 @@ export const Play = () => {
     } else {
         for(let i = 0; i < gameState!.board.cardsOnFieldPlayer2.length; i++) {
             cardsOnFieldPlayer2.push(<CardInField cardImg={gameState?.board.cardsOnFieldPlayer2[i].cardName}/>);
+        }
+    }
+
+    /*rangedPlayer1*/
+    if(gameState!.board.rangedPlayer1.length == 0) {
+        rangedPlayer1.push(<button type="button" className="card-in-field empty-card"></button>);
+    } else {
+        for(let i = 0; i < gameState?.board.rangedPlayer1.length; i++) {
+            rangedPlayer1.push(<CardInField cardImg={gameState?.board.rangedPlayer1[i].cardName}/>);
+        }
+    }
+
+    /*rangedPlayer2*/
+    if(gameState!.board.rangedPlayer2.length == 0) {
+        rangedPlayer2.push(<button type="button" className="card-in-field empty-card"></button>);
+    } else {
+        for(let i = 0; i < gameState!.board.rangedPlayer2.length; i++) {
+            rangedPlayer2.push(<CardInField cardImg={gameState?.board.rangedPlayer2[i].cardName}/>);
+        }
+    }
+
+    /*siegePlayer1*/
+    if(gameState!.board.siegePlayer1.length == 0) {
+        siegePlayer1.push(<button type="button" className="card-in-field empty-card"></button>);
+    } else {
+        for(let i = 0; i < gameState?.board.siegePlayer1.length; i++) {
+            siegePlayer1.push(<CardInField cardImg={gameState?.board.siegePlayer1[i].cardName}/>);
+        }
+    }
+
+    /*siegePlayer2*/
+    if(gameState!.board.siegePlayer2.length == 0) {
+        siegePlayer2.push(<button type="button" className="card-in-field empty-card"></button>);
+    } else {
+        for(let i = 0; i < gameState!.board.siegePlayer2.length; i++) {
+            siegePlayer2.push(<CardInField cardImg={gameState?.board.siegePlayer2[i].cardName}/>);
         }
     }
 
@@ -118,6 +158,34 @@ export const Play = () => {
         <div id="totalPoints2">{gameState?.scores.totalScorePlayer2}</div>
         <div id="closePoints1">{gameState?.scores.scoreCloseRangePlayer1}</div>
         <div id="closePoints2">{gameState?.scores.scoreCloseRangePlayer2}</div>
+        <div id="rangedPoints1">{gameState?.scores.scoreRangedPlayer1}</div>
+        <div id="rangedPoints2">{gameState?.scores.scoreRangedPlayer2}</div>
+        <div id="siegePoints1">{gameState?.scores.scoreSiegePlayer1}</div>
+        <div id="siegePoints2">{gameState?.scores.scoreSiegePlayer2}</div>
+    </div>
+    <div className="divFix">
+        <div className="Ranged-1-Cards">
+            {rangedPlayer1}
+        </div>
+        <PlayingField field="Ranged-1"/>
+    </div>
+    <div className="divFix">
+        <div className="Ranged-2-Cards">
+            {rangedPlayer2}
+        </div>
+        <PlayingField field="Ranged-2"/>
+    </div>
+    <div className="divFix">
+        <div className="Siege-1-Cards">
+            {siegePlayer1}
+        </div>
+        <PlayingField field="Siege-1"/>
+    </div>
+    <div className="divFix">
+        <div className="Siege-2-Cards">
+            {siegePlayer2}
+        </div>
+        <PlayingField field="Siege-2"/>
     </div>
     </>
 };

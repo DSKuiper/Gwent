@@ -4,9 +4,12 @@ public class CardDTO {
     private String cardName;
     private String cardID;
 
-    public CardDTO(String cardName, String cardID) {
+    private String range;
+
+    public CardDTO(String cardName, String cardID, String range) {
         this.cardName = cardName;
         this.cardID = cardID;
+        this.range = range;
     }
 
     public String getCardName() {

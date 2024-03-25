@@ -32,3 +32,23 @@
     position: relative;
     top: 44px;
 }
+
+#rangedPoints1 {
+    position: relative;
+    top: 272px;
+}
+
+#rangedPoints2 {
+    position: relative;
+    top: -199px;
+}
+
+#siegePoints1 {
+    position: relative;
+    top: 305px;
+}
+
+#siegePoints2 {
+    position: relative;
+    top: -435px;
+}
