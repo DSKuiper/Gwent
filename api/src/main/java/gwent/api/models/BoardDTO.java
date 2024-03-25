@@ -24,26 +24,26 @@ public class BoardDTO {
 
         rangedPlayer1 = new CardDTO[gwent.getBoard().numberOfCards("ranged", 1)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("ranged", 1); i++) {
-            rangedPlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1, "close").getCardName(),
-                    gwent.getBoard().getCard(i, 1, "close").getCardID(), "ranged");
+            rangedPlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1, "ranged").getCardName(),
+                    gwent.getBoard().getCard(i, 1, "ranged").getCardID(), "ranged");
         }
 
         rangedPlayer2 = new CardDTO[gwent.getBoard().numberOfCards("ranged", 2)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("ranged", 2); i++) {
-            rangedPlayer2[i] = new CardDTO(gwent.getBoard().getCard(i, 2, "close").getCardName(),
-                    gwent.getBoard().getCard(i, 2, "close").getCardID(), "ranged");
+            rangedPlayer2[i] = new CardDTO(gwent.getBoard().getCard(i, 2, "ranged").getCardName(),
+                    gwent.getBoard().getCard(i, 2, "ranged").getCardID(), "ranged");
         }
 
         siegePlayer1 = new CardDTO[gwent.getBoard().numberOfCards("siege", 1)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("siege", 1); i++) {
-            siegePlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1, "close").getCardName(),
-                    gwent.getBoard().getCard(i, 1, "close").getCardID(), "siege");
+            siegePlayer1[i] = new CardDTO(gwent.getBoard().getCard(i, 1, "siege").getCardName(),
+                    gwent.getBoard().getCard(i, 1, "siege").getCardID(), "siege");
         }
 
         siegePlayer2 = new CardDTO[gwent.getBoard().numberOfCards("siege", 2)];
         for(int i = 0; i < gwent.getBoard().numberOfCards("siege", 2); i++) {
-            siegePlayer2[i] = new CardDTO(gwent.getBoard().getCard(i, 2, "close").getCardName(),
-                    gwent.getBoard().getCard(i, 2, "close").getCardID(), "siege");
+            siegePlayer2[i] = new CardDTO(gwent.getBoard().getCard(i, 2, "siege").getCardName(),
+                    gwent.getBoard().getCard(i, 2, "siege").getCardID(), "siege");
         }
     }
 }
