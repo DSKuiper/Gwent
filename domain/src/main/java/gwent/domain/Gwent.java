@@ -14,7 +14,7 @@ public class Gwent implements IGwent {
         this.bank = new CardBank();
         this.player1 = new Player(1, bank);
         this.player2 = new Player(2, bank);
-        this.board = new Board(player1, player2);
+        this.board = new Board();
         /*for(int i = 0; i < board.numberOfCards("close", 1); i++ ) {
             closeRangePlayer1.add(board.getCard(i,1));
         }
