@@ -1,7 +1,5 @@
 # Individual project: Gwent
 
-[![coverage report](https://git.sogyo.nl/dkuiper/gwent/badges/main/coverage.svg?job=test-coverage)](https://git.sogyo.nl/dkuiper/gwent/-/commits/main)
-
 ## Project goal
 This repository contains my personal project that concludes my traineeship at Sogyo. The goal of the personal project is to develop a full-stack web application from scratch. I have chosen to implement the game Gwent, which is a card game originally from The Witcher books by Andrzej Sapkowski. In this project, I will implement the rules used in The Witcher 3: Wild Hunt, a game by CD Project Red. How to play Gwent will be explained later in this README or can be found at: https://game8.co/games/Witcher3/archives/277237. 
 
@@ -84,8 +82,9 @@ The back-end, domain and persistence layers of this project are programmed in ja
 In order to play the game, make sure you have `java version 17` installed. Then download and install the dependencies as follows:
 
 ```
-git clone https://git.sogyo.nl/dkuiper/gwent
-cd client
+git clone https://github.com/DSKuiper/Gwent.git
+cd gwent
+cd front-end
 npm install
 ```
 
@@ -99,7 +98,7 @@ Start the front-end server by going to the `gwent/client` folder and running the
 npm run dev
 ```
 
-In your browser, go to: `localhost:8080`
+In your browser, go to: `localhost:5173`
 
 ## How to play Gwent
 Gwent is a strategic card game in which two players try to defeat the other by placing their cards on their playing field and forming the highest attack strength. The game is played in three rounds. A player can end a round at the start of their turn, preventing them from playing any more cards. When players end the round, the player with the highest score is granted a win. The player who has won two rounds first wins the game.
